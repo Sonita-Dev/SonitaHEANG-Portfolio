@@ -1,0 +1,568 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portfolio | HEANG.SONITA</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Courier+Prime:wght@400;700&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "surface-container": "#1f1f1f",
+              "surface-container-lowest": "#0e0e0e",
+              "surface-container-low": "#1b1b1b",
+              surface: "#131313",
+              background: "#131313",
+              primary: "#dcb8ff",
+              "on-surface": "#e2e2e2",
+              "on-primary": "#480081",
+              "on-secondary": "#2f3131",
+              outline: "#988ca0",
+            },
+            borderRadius: {
+              DEFAULT: "0.25rem",
+              lg: "0.5rem",
+              xl: "0.75rem",
+              full: "9999px",
+            },
+            spacing: {
+              "stack-sm": "8px",
+              "stack-md": "16px",
+              "stack-lg": "32px",
+              gutter: "24px",
+              "margin-desktop": "48px",
+              "margin-mobile": "16px",
+              "section-gap": "80px",
+              "container-max": "1200px",
+            },
+            fontFamily: {
+              "headline-sm": ["Courier Prime"],
+              "headline-lg": ["Courier Prime"],
+              "body-lg": ["Courier Prime"],
+              "body-md": ["Courier Prime"],
+              "label-md": ["Courier Prime"],
+            },
+            fontSize: {
+              "headline-lg": [
+                "48px",
+                {
+                  lineHeight: "1.2",
+                  letterSpacing: "-0.02em",
+                  fontWeight: "700",
+                },
+              ],
+              "headline-md": ["32px", { lineHeight: "1.3", fontWeight: "700" }],
+              "headline-sm": ["24px", { lineHeight: "1.4", fontWeight: "700" }],
+              "body-lg": ["18px", { lineHeight: "1.6", fontWeight: "400" }],
+              "body-md": ["16px", { lineHeight: "1.6", fontWeight: "400" }],
+              "label-md": ["14px", { lineHeight: "1", fontWeight: "700" }],
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      body {
+        background-color: #000000;
+        color: #e2e2e2;
+        cursor: crosshair;
+        font-family: "Courier Prime", monospace;
+      }
+      .terminal-border {
+        border: 1px solid #8a2be2;
+      }
+      .terminal-divider {
+        border-bottom: 1px solid #8a2be2;
+      }
+      .sticky-nav .header-logo,
+      .sticky-nav #main-nav a {
+        font-family: "Courier Prime", monospace !important;
+        font-size: 0.96rem !important;
+        line-height: 1.3 !important;
+        letter-spacing: 0.04em !important;
+        text-transform: none !important;
+        display: inline-flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+      }
+      .sticky-nav #main-nav a {
+        padding: 0.35rem 0.7rem !important;
+        font-weight: 500 !important;
+      }
+      .sticky-nav .header-logo {
+        font-weight: 700 !important;
+        letter-spacing: 0.08em !important;
+      }
+      .custom-scrollbar::-webkit-scrollbar {
+        width: 4px;
+      }
+      .custom-scrollbar::-webkit-scrollbar-track {
+        background: #131313;
+      }
+      .custom-scrollbar::-webkit-scrollbar-thumb {
+        background: #8a2be2;
+      }
+      .hover-fill:hover {
+        background-color: #8a2be2;
+        color: #000000 !important;
+      }
+      .terminal-card {
+        transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+      .terminal-card:hover {
+        box-shadow: 0 0 15px rgba(138, 43, 226, 0.3);
+        transform: translateY(-2px);
+      }
+      @keyframes scanline {
+        0% {
+          transform: translateY(-100%);
+        }
+        100% {
+          transform: translateY(100%);
+        }
+      }
+      .scanline {
+        width: 100%;
+        height: 2px;
+        background: rgba(138, 43, 226, 0.1);
+        position: fixed;
+        top: 0;
+        left: 0;
+        pointer-events: none;
+        animation: scanline 8s linear infinite;
+        z-index: 50;
+      }
+      @media (max-width: 767px) {
+        #main-nav.flex {
+          position: absolute;
+          top: 100%;
+          left: 0;
+          right: 0;
+          z-index: 40;
+          background: rgba(19, 19, 19, 0.96);
+          border-top: 1px solid #8a2be2;
+          border-bottom-left-radius: 0.75rem;
+          border-bottom-right-radius: 0.75rem;
+          padding: 1rem 1.25rem 1.25rem;
+          flex-direction: column;
+        }
+        #main-nav a {
+          width: 100%;
+        }
+      }
+    </style>
+  </head>
+  <body
+    class="custom-scrollbar bg-background text-on-surface min-h-screen antialiased"
+  >
+    <div class="scanline"></div>
+    <nav class="sticky-nav w-full top-0 sticky bg-background dark:bg-background border-b border-primary z-50">
+      <div class="relative flex justify-between items-center px-margin-mobile md:px-margin-desktop py-stack-md w-full max-w-container-max mx-auto">
+        <a class="header-logo text-primary font-body-md text-body-md font-bold" href="index.html">HEANG.SONITA</a>
+        <nav id="main-nav" class="hidden md:flex flex-col md:flex-row items-start md:items-center gap-stack-md md:gap-gutter">
+          <a class="text-on-surface-variant hover:text-primary transition-colors duration-200 font-body-md text-body-md" href="index.html">Home</a>
+          <a class="text-on-surface-variant hover:text-primary transition-colors duration-200 font-body-md text-body-md" href="resume.html">Resume</a>
+          <a class="text-primary font-bold border-b-2 border-primary pb-1 font-body-md text-body-md" href="portfolio.html">Portfolio</a>
+          <a class="text-on-surface-variant hover:text-primary transition-colors duration-200 font-body-md text-body-md" href="contact.html">Contact</a>
+        </nav>
+        <div class="flex items-center gap-2">
+          <button id="mobile-menu-btn" class="md:hidden border border-primary px-stack-md py-stack-sm text-primary hover:bg-primary-container hover:text-black transition-all active:opacity-80">☰</button>
+        </div>
+      </div>
+    </nav>
+    <main
+      class="min-h-screen max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-section-gap space-y-section-gap"
+    >
+      <header class="space-y-stack-md">
+        <h1
+          class="font-headline-lg text-headline-lg text-primary uppercase border-l-4 border-primary pl-stack-md"
+        >
+          PORTFOLIO_OUTPUT
+        </h1>
+        <p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl">
+          A structured log of my engineering milestones, international
+          leadership engagements, and technical fellowships.
+        </p>
+      </header>
+      <section class="space-y-stack-lg">
+        <div
+          class="flex items-center gap-stack-md terminal-divider pb-stack-sm"
+        >
+          <span class="material-symbols-outlined text-primary">terminal</span>
+          <h2 class="font-headline-md text-headline-md text-primary">
+            Software Engineering Projects
+          </h2>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-gutter">
+          <div
+            class="terminal-card terminal-border bg-surface-container-lowest overflow-hidden flex flex-col"
+          >
+            <div
+              class="p-stack-md terminal-divider flex justify-between items-center bg-surface-container-low"
+            >
+              <span class="font-label-md text-label-md text-primary"
+                >SRC: SECURE_VAULT_API</span
+              >
+              <div class="flex gap-2">
+                <span class="w-3 h-3 border border-primary rounded-full"></span>
+                <span class="w-3 h-3 border border-primary rounded-full"></span>
+              </div>
+            </div>
+            <div class="p-stack-md space-y-stack-sm flex-grow">
+              <p class="font-body-md text-body-md text-on-surface">
+                Distributed database architecture with zero-knowledge proof
+                encryption protocols.
+              </p>
+              <div class="flex flex-wrap gap-stack-sm py-stack-sm">
+                <span
+                  class="border border-outline-variant px-2 py-1 text-[12px] font-code-inline text-on-surface-variant"
+                  >RUST</span
+                >
+                <span
+                  class="border border-outline-variant px-2 py-1 text-[12px] font-code-inline text-on-surface-variant"
+                  >POSTGRESQL</span
+                >
+                <span
+                  class="border border-outline-variant px-2 py-1 text-[12px] font-code-inline text-on-surface-variant"
+                  >KUBERNETES</span
+                >
+              </div>
+            </div>
+            <div
+              class="p-stack-md bg-surface-container-low border-t border-primary/30"
+            >
+              <p class="font-label-md text-label-md text-primary mb-1">
+                REFLECTION_LOG:
+              </p>
+              <p
+                class="font-code-inline text-code-inline text-on-surface-variant italic"
+              >
+                Core takeaways: Deep understanding of memory safety. Areas of
+                improvement: Refactoring the legacy encryption module for better
+                throughput.
+              </p>
+            </div>
+          </div>
+          <div
+            class="terminal-card terminal-border bg-surface-container-lowest overflow-hidden flex flex-col"
+          >
+            <div
+              class="p-stack-md terminal-divider flex justify-between items-center bg-surface-container-low"
+            >
+              <span class="font-label-md text-label-md text-primary"
+                >SRC: NEURAL_PATH_VISUALIZER</span
+              >
+              <div class="flex gap-2">
+                <span class="w-3 h-3 border border-primary rounded-full"></span>
+                <span class="w-3 h-3 border border-primary rounded-full"></span>
+              </div>
+            </div>
+            <div class="p-stack-md space-y-stack-sm flex-grow">
+              <p class="font-body-md text-body-md text-on-surface">
+                Interactive 3D visualization tool for mapping neural network
+                weight optimizations.
+              </p>
+              <div class="flex flex-wrap gap-stack-sm py-stack-sm">
+                <span
+                  class="border border-outline-variant px-2 py-1 text-[12px] font-code-inline text-on-surface-variant"
+                  >TYPESCRIPT</span
+                >
+                <span
+                  class="border border-outline-variant px-2 py-1 text-[12px] font-code-inline text-on-surface-variant"
+                  >THREE.JS</span
+                >
+                <span
+                  class="border border-outline-variant px-2 py-1 text-[12px] font-code-inline text-on-surface-variant"
+                  >PYTORCH</span
+                >
+              </div>
+            </div>
+            <div
+              class="p-stack-md bg-surface-container-low border-t border-primary/30"
+            >
+              <p class="font-label-md text-label-md text-primary mb-1">
+                REFLECTION_LOG:
+              </p>
+              <p
+                class="font-code-inline text-code-inline text-on-surface-variant italic"
+              >
+                Key strengths: High performance rendering of large datasets.
+                Improvement: Mobile responsive interaction models for UI
+                components.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="space-y-stack-lg">
+        <div
+          class="flex items-center gap-stack-md terminal-divider pb-stack-sm"
+        >
+          <span class="material-symbols-outlined text-primary">public</span>
+          <h2 class="font-headline-md text-headline-md text-primary">
+            International Leadership Programs
+          </h2>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+          <div
+            class="terminal-card terminal-border bg-surface-container-lowest flex flex-col"
+          >
+            <div
+              class="h-40 bg-cover bg-center terminal-divider grayscale hover:grayscale-0 transition-all duration-500"
+              data-alt="A high-contrast black and white photograph of a modern glass skyscraper reflecting a purple neon skyline, representing international finance and global connection in a minimalist techno-brutalist style."
+              style="
+                background-image: url(&quot;https://lh3.googleusercontent.com/aida-public/AB6AXuDjFT5cABxz_ve-yKzEalJFA8jJryDu12foGOpY7iGS5x2DvvdkbQDsoGLUtZAAb80aqmRu8NaFpu-hGadNrAtEVfsZ24HFYA_pvA4sDCamLdCgfuABkcQ0l09BSBZ5GD-dqHGOXNkXhpY2DDC3vhuDbLS6Eba9DG6YyRb_A1c83pzKYCraPyAwbapw6fiEE9DgNBKe3GJQcIFl5rKwMwWtV5TYmwOLVkn9EuAEN3Ji-9G78Vk9Wa2uzYUNwhQbny-WALiyvbZb-RI&quot;);
+              "
+            ></div>
+            <div class="p-stack-md space-y-stack-sm flex-grow">
+              <h3 class="font-headline-sm text-headline-sm text-primary">
+                World Bank Group Youth Summit
+              </h3>
+              <p class="font-body-md text-body-md text-on-surface-variant">
+                Delegate contributing to sustainable tech policies in Southeast
+                Asia.
+              </p>
+            </div>
+            <div
+              class="p-stack-md bg-surface-container-low border-t border-primary/30"
+            >
+              <p class="font-label-md text-label-md text-primary">
+                REFLECTION:
+              </p>
+              <p
+                class="font-code-inline text-code-inline text-on-surface-variant italic"
+              >
+                Takeaway: Policy-making requires a delicate balance of local
+                data and global vision. Improved my diplomatic communication.
+              </p>
+            </div>
+          </div>
+          <div
+            class="terminal-card terminal-border bg-surface-container-lowest flex flex-col"
+          >
+            <div
+              class="h-40 bg-cover bg-center terminal-divider grayscale hover:grayscale-0 transition-all duration-500"
+              data-alt="A digital render of a symmetrical circular assembly room with purple light strips glowing along the floor, symbolizing regional cooperation and diplomatic symposiums in a sharp, futuristic cyberpunk aesthetic."
+              style="
+                background-image: url(&quot;https://lh3.googleusercontent.com/aida-public/AB6AXuD4-IBzyz03ZImHqI1QCFJcuyd9Ts6i-ql-BOTagTZY9YoX-_dbwtgs3STG4hnibKvLK-6tDCAELBnNhL1zl00BRwL4kT3C3nzLNjQzDtW97RSSQQvtfAMfw8c3DT4p6pmXJ0ClViYxh7IPXUkx_0dKi-oUxqn0X2miPtdnFUtXqoIY-BLVl2P9DZBzLADaz-OkXQkf_NaY7P1Hmdgu9y2vKMbIW_F-j97dnTabVQJtGzI91M78s6yoL3_ciaY6uA166mP4aHyK-J8&quot;);
+              "
+            ></div>
+            <div class="p-stack-md space-y-stack-sm flex-grow">
+              <h3 class="font-headline-sm text-headline-sm text-primary">
+                ASEAN Symposium
+              </h3>
+              <p class="font-body-md text-body-md text-on-surface-variant">
+                Cross-border collaboration on digital economy and
+                infrastructure.
+              </p>
+            </div>
+            <div
+              class="p-stack-md bg-surface-container-low border-t border-primary/30"
+            >
+              <p class="font-label-md text-label-md text-primary">
+                REFLECTION:
+              </p>
+              <p
+                class="font-code-inline text-code-inline text-on-surface-variant italic"
+              >
+                Strength: Building consensus across diverse cultural
+                perspectives. Insight: Interoperability is the key to regional
+                success.
+              </p>
+            </div>
+          </div>
+          <div
+            class="terminal-card terminal-border bg-surface-container-lowest flex flex-col"
+          >
+            <div
+              class="h-40 bg-cover bg-center terminal-divider grayscale hover:grayscale-0 transition-all duration-500"
+              data-alt="A graphic illustration of a network of interconnected purple lines over a pitch black map, representing a web of leaders and social impact initiatives across Southeast Asia in a minimal digital style."
+              style="
+                background-image: url(&quot;https://lh3.googleusercontent.com/aida-public/AB6AXuDMKf15DiJJZK4HyhFGHfrlIF_PNn9WAfuec8xLYTrfGmZmnlBeDRu8MBYLo4NQUflyZtThP08hEP19tasxy7GbSVlTHkkCs4LIuNTSe2GGHwyJ8u2tys5TBrf7rKajWkYmM91-NNht8QMneUKO5ue-e2bX9RAfOcQhBe2Vupx8wSg62bsZhq5MDObS_eIE2wu9cj6WCWqvecSJwkdLx3liOKHlzv4L3MiTcBb1tpdfJ1UkKAhZrKavRtbwpD74wpAvTm2JSnn5AN8&quot;);
+              "
+            ></div>
+            <div class="p-stack-md space-y-stack-sm flex-grow">
+              <h3 class="font-headline-sm text-headline-sm text-primary">
+                SEALNet
+              </h3>
+              <p class="font-body-md text-body-md text-on-surface-variant">
+                Service leadership and youth empowerment network for social
+                impact.
+              </p>
+            </div>
+            <div
+              class="p-stack-md bg-surface-container-low border-t border-primary/30"
+            >
+              <p class="font-label-md text-label-md text-primary">
+                REFLECTION:
+              </p>
+              <p
+                class="font-code-inline text-code-inline text-on-surface-variant italic"
+              >
+                Takeaway: Impact is measured in human connections. Improved
+                capacity for grassroots project management and empathy.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="space-y-stack-lg pb-stack-lg">
+        <div
+          class="flex items-center gap-stack-md terminal-divider pb-stack-sm"
+        >
+          <span class="material-symbols-outlined text-primary">school</span>
+          <h2 class="font-headline-md text-headline-md text-primary">
+            Tech Fellowships / Bootcamps
+          </h2>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-gutter">
+          <div
+            class="terminal-card terminal-border bg-surface-container-lowest flex items-center gap-0 overflow-hidden"
+          >
+            <div class="w-1/3 h-full hidden md:block border-r border-primary">
+              <img
+                class="h-full w-full object-cover"
+                data-alt="A minimalist tech-themed portrait focus on a glowing laptop screen reflecting purple code snippets onto a shadowed face, celebrating female leadership in technology with a sharp, digital grain effect."
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuBGurzGBWpGAk96gGWskJDU-s15rpBM0GOsCSmrWCJ1yvDhM6IJWOEgwe2kBDEAtKotThx-oEASop2LV2ik9VYUYDVf_n5zX_XTCihajkV6Z0zw12484PbuG0x8ve8MtpGCziNom9VY9dNu7z4m27hzAD5DbD8AY9wCdVWmZYc4-In-g9gGUYRXK7W9-mhH8D3dNyjVjY1CRpTwNtZCbHUaHh0IcviGEING5qj8VtT65i2pF3GcAU2kRzb8nXpEo3c5__1ArgWlI4s"
+              />
+            </div>
+            <div class="flex-1 p-stack-md space-y-stack-sm">
+              <div class="flex justify-between items-start">
+                <h3 class="font-headline-sm text-headline-sm text-primary">
+                  Sisters of Code
+                </h3>
+                <span
+                  class="material-symbols-outlined text-primary"
+                  data-weight="fill"
+                  >verified</span
+                >
+              </div>
+              <p class="font-body-md text-body-md text-on-surface">
+                Empowering women in STEM through intensive computer science
+                training.
+              </p>
+              <div class="pt-stack-md border-t border-primary/20">
+                <p class="font-label-md text-label-md text-primary">
+                  REFLECTION:
+                </p>
+                <p
+                  class="font-code-inline text-code-inline text-on-surface-variant italic"
+                >
+                  Strength: Mentorship and community building. Focus:
+                  Strengthening system architecture design skills.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div
+            class="terminal-card terminal-border bg-surface-container-lowest flex items-center gap-0 overflow-hidden"
+          >
+            <div class="w-1/3 h-full hidden md:block border-r border-primary">
+              <img
+                class="h-full w-full object-cover"
+                data-alt="A futuristic abstract concept of digital waves in deep purple flowing through a dark void, symbolizing the i-SEA fellowship's focus on technological innovation and fluidity in Southeast Asian leadership."
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuAvWdQfyi51VsjylKVoAU0OMzCxH0dPxWgHDp0INw__jusaZijJUnVsDWuomPLT22zlJktlLa1mR4rdzpTRa2Sg-gMu4yTBS1Rx8l59WAmHBcQmm-vdgD0Xel0JAkchLQG_CZWB7Cs9SbfAKT4rxCwc7xQ_xDh4o1oY7oSPOLCMZp579OOQ0SsQOp3v4MQAsS1VE513ynKliydgF0fJfuUZgVy23TodKE9jEZLh3xdJ8el42FqXARIvvdtzbrhrH7NIELFJ8NEwaJQ"
+              />
+            </div>
+            <div class="flex-1 p-stack-md space-y-stack-sm">
+              <div class="flex justify-between items-start">
+                <h3 class="font-headline-sm text-headline-sm text-primary">
+                  i-SEA Fellowship
+                </h3>
+                <span
+                  class="material-symbols-outlined text-primary"
+                  data-weight="fill"
+                  >token</span
+                >
+              </div>
+              <p class="font-body-md text-body-md text-on-surface">
+                Selective program for high-potential innovators driving regional
+                digital change.
+              </p>
+              <div class="pt-stack-md border-t border-primary/20">
+                <p class="font-label-md text-label-md text-primary">
+                  REFLECTION:
+                </p>
+                <p
+                  class="font-code-inline text-code-inline text-on-surface-variant italic"
+                >
+                  Takeaway: Intersection of tech and social entrepreneurship.
+                  Improved pitch delivery and technical scoping.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer
+      class="bg-background dark:bg-background text-primary font-label-md text-label-md w-full bottom-0 border-t border-primary mt-section-gap"
+    >
+      <div
+        class="flex flex-col md:flex-row justify-between items-center px-margin-mobile md:px-margin-desktop py-stack-lg w-full max-w-container-max mx-auto gap-stack-md"
+      >
+        <div class="font-headline-sm text-headline-sm text-primary uppercase">
+          © 2024 HEANG SONITA
+        </div>
+        <div class="flex items-center gap-stack-lg">
+          <a
+            class="text-on-surface-variant hover:text-primary hover:underline transition-all"
+            href="https://linkedin.com"
+            target="_blank"
+            rel="noreferrer"
+            >LinkedIn</a
+          >
+          <a
+            class="text-on-surface-variant hover:text-primary hover:underline transition-all"
+            href="mailto:hello@example.com"
+            >Email</a
+          >
+          <a
+            class="text-on-surface-variant hover:text-primary hover:underline transition-all"
+            href="https://github.com"
+            target="_blank"
+            rel="noreferrer"
+            >GitHub</a
+          >
+          <a
+            class="text-on-surface-variant hover:text-primary hover:underline transition-all"
+            href="https://twitter.com"
+            target="_blank"
+            rel="noreferrer"
+            >Twitter</a
+          >
+        </div>
+        <div
+          class="text-primary/50 text-[10px] tracking-widest font-code-inline"
+        >
+          BUILT_FOR_PERFORMANCE // ROOT_ACCESS_GRANTED
+        </div>
+      </div>
+    </footer>
+    <script src="assets/js/script.js" defer></script>
+    <script>
+      document.querySelectorAll(".terminal-card").forEach((card) => {
+        card.addEventListener("click", () => {
+          const title =
+            card.querySelector("h3, span.font-label-md")?.innerText ||
+            "Unknown Module";
+          console.log(
+            `%c[SYSTEM]: Initializing ${title} exploration sequence...`,
+            "color: #8A2BE2; font-weight: bold;",
+          );
+        });
+      });
+    </script>
+  </body>
+</html>

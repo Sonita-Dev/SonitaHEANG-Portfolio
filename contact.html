@@ -1,0 +1,498 @@
+<!doctype html>
+<html class="dark" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>HEANG.SONITA | CONTACT</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Courier+Prime:wght@400;700&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <!-- Shared Component Configuration -->
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "surface-container": "#1f1f1f",
+              "on-secondary-fixed-variant": "#454747",
+              "secondary-fixed-dim": "#c6c6c7",
+              "on-secondary": "#2f3131",
+              "secondary-container": "#454747",
+              background: "#131313",
+              "inverse-on-surface": "#303030",
+              surface: "#131313",
+              "on-secondary-container": "#b4b5b5",
+              "surface-container-lowest": "#0e0e0e",
+              "outline-variant": "#4c4354",
+              "on-primary-fixed-variant": "#6700b5",
+              "on-surface": "#e2e2e2",
+              primary: "#dcb8ff",
+              "inverse-primary": "#8422dc",
+              "on-primary-fixed": "#2c0051",
+              "on-primary": "#480081",
+              "tertiary-fixed-dim": "#c8c6c5",
+              "tertiary-fixed": "#e5e2e1",
+              "surface-tint": "#dcb8ff",
+              "secondary-fixed": "#e2e2e2",
+              tertiary: "#c8c6c5",
+              "on-background": "#e2e2e2",
+              "primary-fixed": "#efdbff",
+              "error-container": "#93000a",
+              "primary-fixed-dim": "#dcb8ff",
+              "tertiary-container": "#646363",
+              secondary: "#c6c6c7",
+              "on-tertiary-container": "#e3e0df",
+              "surface-container-low": "#1b1b1b",
+              "on-secondary-fixed": "#1a1c1c",
+              "on-surface-variant": "#cfc2d7",
+              "inverse-surface": "#e2e2e2",
+              outline: "#988ca0",
+              "on-tertiary-fixed-variant": "#474746",
+              "surface-container-highest": "#353535",
+              "surface-bright": "#393939",
+              "on-tertiary": "#313030",
+              "on-tertiary-fixed": "#1c1b1b",
+              "on-error-container": "#ffdad6",
+              "on-primary-container": "#eed9ff",
+              "primary-container": "#8a2be2",
+              error: "#ffb4ab",
+              "surface-variant": "#353535",
+              "surface-container-high": "#2a2a2a",
+              "on-error": "#690005",
+              "surface-dim": "#131313",
+            },
+            borderRadius: {
+              DEFAULT: "0.25rem",
+              lg: "0.5rem",
+              xl: "0.75rem",
+              full: "9999px",
+            },
+            spacing: {
+              unit: "4px",
+              "stack-sm": "8px",
+              gutter: "24px",
+              "stack-lg": "32px",
+              "margin-desktop": "48px",
+              "stack-md": "16px",
+              "container-max": "1200px",
+              "section-gap": "80px",
+              "margin-mobile": "16px",
+            },
+            fontFamily: {
+              "headline-sm": ["Courier Prime"],
+              "code-inline": ["Courier Prime"],
+              "headline-lg": ["Courier Prime"],
+              "body-lg": ["Courier Prime"],
+              "body-md": ["Courier Prime"],
+              "headline-md": ["Courier Prime"],
+              "headline-lg-mobile": ["Courier Prime"],
+              "label-md": ["Courier Prime"],
+            },
+            fontSize: {
+              "headline-sm": ["24px", { lineHeight: "1.4", fontWeight: "700" }],
+              "code-inline": ["14px", { lineHeight: "1.4", fontWeight: "400" }],
+              "headline-lg": [
+                "48px",
+                {
+                  lineHeight: "1.2",
+                  letterSpacing: "-0.02em",
+                  fontWeight: "700",
+                },
+              ],
+              "body-lg": ["18px", { lineHeight: "1.6", fontWeight: "400" }],
+              "body-md": ["16px", { lineHeight: "1.6", fontWeight: "400" }],
+              "headline-md": ["32px", { lineHeight: "1.3", fontWeight: "700" }],
+              "headline-lg-mobile": [
+                "32px",
+                { lineHeight: "1.2", fontWeight: "700" },
+              ],
+              "label-md": ["14px", { lineHeight: "1", fontWeight: "700" }],
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      body {
+        background-color: #000000;
+        color: #e2e2e2;
+        cursor: crosshair;
+      }
+
+      .terminal-border {
+        border: 1px solid #8a2be2;
+      }
+
+      .terminal-header-btn {
+        width: 12px;
+        height: 12px;
+        border: 1px solid #8a2be2;
+        display: inline-block;
+        margin-right: 4px;
+      }
+      .sticky-nav .header-logo,
+      .sticky-nav #main-nav a {
+        font-family: "Courier Prime", monospace !important;
+        font-size: 0.96rem !important;
+        line-height: 1.3 !important;
+        letter-spacing: 0.04em !important;
+        text-transform: none !important;
+        display: inline-flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+      }
+      .sticky-nav #main-nav a {
+        padding: 0.35rem 0.7rem !important;
+        font-weight: 500 !important;
+      }
+      .sticky-nav .header-logo {
+        font-weight: 700 !important;
+        letter-spacing: 0.08em !important;
+      }
+
+      .custom-scrollbar::-webkit-scrollbar {
+        width: 4px;
+      }
+      .custom-scrollbar::-webkit-scrollbar-track {
+        background: #000000;
+      }
+      .custom-scrollbar::-webkit-scrollbar-thumb {
+        background: #8a2be2;
+      }
+
+      /* Micro-interactions */
+      .btn-glitch:hover {
+        box-shadow: 4px 4px 0px #8a2be2;
+        transform: translate(-2px, -2px);
+      }
+      .input-block:focus-within {
+        border-color: #dcb8ff;
+        background: rgba(138, 43, 226, 0.05);
+      }
+      .caret-blink::after {
+        content: "_";
+        animation: blink 1s step-end infinite;
+      }
+      @keyframes blink {
+        from,
+        to {
+          opacity: 1;
+        }
+        50% {
+          opacity: 0;
+        }
+      }
+      @media (max-width: 767px) {
+        #main-nav.flex {
+          position: absolute;
+          top: 100%;
+          left: 0;
+          right: 0;
+          z-index: 40;
+          background: rgba(19, 19, 19, 0.96);
+          border-top: 1px solid #8a2be2;
+          border-bottom-left-radius: 0.75rem;
+          border-bottom-right-radius: 0.75rem;
+          padding: 1rem 1.25rem 1.25rem;
+          flex-direction: column;
+        }
+        #main-nav a {
+          width: 100%;
+        }
+      }
+    </style>
+  </head>
+  <body
+    class="font-body-md text-body-md antialiased overflow-x-hidden min-h-screen flex flex-col"
+    data-mode="connect"
+  >
+    <!-- TopAppBar -->
+    <nav class="sticky-nav w-full top-0 sticky bg-background dark:bg-background border-b border-primary z-50">
+      <div class="relative flex justify-between items-center px-margin-mobile md:px-margin-desktop py-stack-md w-full max-w-container-max mx-auto">
+        <a class="header-logo text-primary font-body-md text-body-md font-bold" href="index.html">HEANG.SONITA</a>
+        <nav id="main-nav" class="hidden md:flex flex-col md:flex-row items-start md:items-center gap-stack-md md:gap-gutter">
+          <a class="text-on-surface-variant hover:text-primary transition-colors duration-200 font-body-md text-body-md" href="index.html">Home</a>
+          <a class="text-on-surface-variant hover:text-primary transition-colors duration-200 font-body-md text-body-md" href="resume.html">Resume</a>
+          <a class="text-on-surface-variant hover:text-primary transition-colors duration-200 font-body-md text-body-md" href="portfolio.html">Portfolio</a>
+          <a class="text-primary font-bold border-b-2 border-primary pb-1 font-body-md text-body-md" href="contact.html">Contact</a>
+        </nav>
+        <div class="flex items-center gap-2">
+          <button id="mobile-menu-btn" class="md:hidden border border-primary px-stack-md py-stack-sm text-primary hover:bg-primary-container hover:text-black transition-all duration-200 active:opacity-80">☰</button>
+        </div>
+      </div>
+    </nav>
+    <!-- Main Content Canvas -->
+    <main
+      class="flex-grow w-full max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-section-gap grid grid-cols-1 md:grid-cols-12 gap-gutter"
+    >
+      <!-- Left Panel: Headline & Info -->
+      <div class="md:col-span-5 flex flex-col gap-stack-lg">
+        <div class="terminal-border p-stack-lg bg-black relative">
+          <div
+            class="absolute -top-3 left-4 bg-black px-2 text-primary font-bold font-label-md text-label-md"
+          >
+            SYSTEM_INIT
+          </div>
+          <h1
+            class="font-headline-lg text-headline-lg text-primary mb-stack-md"
+          >
+            ESTABLISH_
+            <div>CONNECTION<span class="caret-blink"></span></div>
+          </h1>
+          <p class="text-on-surface-variant font-body-lg text-body-lg">
+            Have a technical inquiry or a project that demands high-performance
+            code? Drop a message into the queue.
+          </p>
+        </div>
+        <div class="terminal-border overflow-hidden">
+          <div
+            class="bg-primary-container/10 border-b border-primary p-stack-sm flex justify-between items-center"
+          >
+            <span class="font-label-md text-label-md text-primary px-2"
+              >LOCAL_DATA</span
+            >
+            <div class="flex px-2">
+              <span class="terminal-header-btn"></span>
+              <span class="terminal-header-btn"></span>
+              <span class="terminal-header-btn"></span>
+            </div>
+          </div>
+          <div class="p-stack-lg flex flex-col gap-stack-md">
+            <div class="flex items-center gap-stack-md">
+              <span class="material-symbols-outlined text-primary"
+                >location_on</span
+              >
+              <span class="font-code-inline text-code-inline uppercase"
+                >PHNOM_PENH, KH</span
+              >
+            </div>
+            <div class="flex items-center gap-stack-md">
+              <span class="material-symbols-outlined text-primary"
+                >schedule</span
+              >
+              <span class="font-code-inline text-code-inline uppercase"
+                >UTC+7 // 09:00 - 18:00</span
+              >
+            </div>
+            <!-- status row removed -->
+          </div>
+        </div>
+        <!-- Social Links Panel -->
+        <div class="grid grid-cols-2 gap-stack-md">
+          <a
+            class="terminal-border p-stack-md flex items-center justify-between hover:bg-primary/10 transition-all group"
+            href="https://www.linkedin.com"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <span class="font-label-md text-label-md group-hover:text-primary"
+              >LinkedIn</span
+            >
+            <span
+              class="material-symbols-outlined text-on-surface-variant group-hover:text-primary"
+              >arrow_outward</span
+            >
+          </a>
+          <a
+            class="terminal-border p-stack-md flex items-center justify-between hover:bg-primary/10 transition-all group"
+            href="https://github.com"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <span class="font-label-md text-label-md group-hover:text-primary"
+              >GitHub</span
+            >
+            <span
+              class="material-symbols-outlined text-on-surface-variant group-hover:text-primary"
+              >arrow_outward</span
+            >
+          </a>
+          <a
+            class="terminal-border p-stack-md flex items-center justify-between hover:bg-primary/10 transition-all group"
+            href="mailto:you@example.com"
+          >
+            <span class="font-label-md text-label-md group-hover:text-primary"
+              >Email</span
+            >
+            <span
+              class="material-symbols-outlined text-on-surface-variant group-hover:text-primary"
+              >mail</span
+            >
+          </a>
+          <a
+            class="terminal-border p-stack-md flex items-center justify-between hover:bg-primary/10 transition-all group"
+            href="https://twitter.com"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <span class="font-label-md text-label-md group-hover:text-primary"
+              >Twitter</span
+            >
+            <span
+              class="material-symbols-outlined text-on-surface-variant group-hover:text-primary"
+              >close</span
+            >
+          </a>
+        </div>
+      </div>
+      <!-- Right Panel: Message Form -->
+      <div class="md:col-span-7">
+        <div class="terminal-border bg-black h-full flex flex-col">
+          <div
+            class="border-b border-primary p-stack-md flex items-center gap-stack-md bg-surface-container-low"
+          >
+            <div class="flex gap-1">
+              <div class="w-3 h-3 rounded-full bg-error"></div>
+              <div class="w-3 h-3 rounded-full bg-primary-fixed"></div>
+              <div class="w-3 h-3 rounded-full bg-primary"></div>
+            </div>
+            <span
+              class="font-code-inline text-code-inline text-primary-fixed opacity-70"
+              >messenger.sh — 1024×768</span
+            >
+          </div>
+          <form
+            id="contact-form"
+            data-endpoint="http://localhost:3000/api/contact"
+            class="p-stack-lg flex flex-col gap-stack-lg flex-grow"
+          >
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-stack-lg">
+              <div class="flex flex-col gap-stack-sm">
+                <label
+                  class="font-label-md text-label-md text-primary uppercase"
+                  >sender_identity</label
+                >
+                <div
+                  class="input-block border border-primary p-stack-sm transition-all"
+                >
+                  <input
+                    name="name"
+                    id="contact-name"
+                    class="bg-transparent border-none w-full focus:ring-0 text-on-surface font-code-inline placeholder:text-surface-container-highest uppercase"
+                    placeholder="NAME"
+                    type="text"
+                  />
+                </div>
+              </div>
+              <div class="flex flex-col gap-stack-sm">
+                <label
+                  class="font-label-md text-label-md text-primary uppercase"
+                  >return_address</label
+                >
+                <div
+                  class="input-block border border-primary p-stack-sm transition-all"
+                >
+                  <input
+                    name="email"
+                    id="contact-email"
+                    class="bg-transparent border-none w-full focus:ring-0 text-on-surface font-code-inline placeholder:text-surface-container-highest uppercase"
+                    placeholder="EMAIL@DOMAIN.COM"
+                    type="email"
+                  />
+                </div>
+              </div>
+            </div>
+            <div class="flex flex-col gap-stack-sm flex-grow">
+              <label class="font-label-md text-label-md text-primary uppercase"
+                >payload_content</label
+              >
+              <div
+                class="input-block border border-primary p-stack-sm transition-all flex-grow min-h-[200px]"
+              >
+                <textarea
+                  name="message"
+                  id="contact-message"
+                  class="bg-transparent border-none w-full h-full focus:ring-0 text-on-surface font-code-inline placeholder:text-surface-container-highest uppercase resize-none custom-scrollbar"
+                  placeholder="ENTER MESSAGE DATA..."
+                ></textarea>
+              </div>
+            </div>
+            <div class="flex justify-between items-center pt-stack-md">
+              <div
+                class="hidden md:block font-code-inline text-label-md text-on-surface-variant opacity-50"
+              >
+                [ENCRYPTION_ACTIVE: AES-256]
+              </div>
+              <button
+                class="bg-primary-container text-on-primary font-bold px-stack-lg py-stack-md terminal-border btn-glitch flex items-center gap-stack-md"
+                type="submit"
+              >
+                <span class="">EXECUTE_SEND</span>
+                <span class="material-symbols-outlined" style="font-size: 18px"
+                  >send</span
+                >
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </main>
+    <!-- Visual Element: Background Pattern -->
+    <div
+      class="fixed inset-0 pointer-events-none opacity-5 z-[-1]"
+      style="
+        background-image: radial-gradient(#8a2be2 1px, transparent 1px);
+        background-size: 24px 24px;
+      "
+    ></div>
+    <!-- Footer -->
+    <footer
+      class="w-full bottom-0 bg-background dark:bg-background border-t border-primary mt-section-gap"
+    >
+      <div
+        class="flex flex-col md:flex-row justify-between items-center px-margin-desktop py-stack-lg w-full max-w-container-max mx-auto gap-stack-md"
+      >
+        <div class="font-label-md text-label-md text-on-surface-variant">
+          © 2024 HEANG SONITA | BUILT_FOR_PERFORMANCE
+        </div>
+        <div class="flex gap-gutter">
+          <a
+            class="text-on-surface-variant hover:text-primary hover:underline font-label-md text-label-md"
+            href="https://www.linkedin.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            >LinkedIn</a
+          >
+          <a
+            class="text-on-surface-variant hover:text-primary hover:underline font-label-md text-label-md"
+            href="mailto:you@example.com"
+            >Email</a
+          >
+          <a
+            class="text-on-surface-variant hover:text-primary hover:underline font-label-md text-label-md"
+            href="https://github.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            >GitHub</a
+          >
+          <a
+            class="text-on-surface-variant hover:text-primary hover:underline font-label-md text-label-md"
+            href="https://twitter.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            >Twitter</a
+          >
+        </div>
+      </div>
+    </footer>
+    <script>
+      // Micro-interaction for inputs
+      document.querySelectorAll("input, textarea").forEach((el) => {
+        el.addEventListener("focus", () => {
+          console.log("Terminal Focus: " + el.placeholder);
+        });
+      });
+    </script>
+  </body>
+</html>
