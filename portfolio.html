@@ -1,1034 +1,946 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Portfolio | HEANG.SONITA</title>
-    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-    <link
-      href="https://fonts.googleapis.com/css2?family=Courier+Prime:wght@400;700&amp;display=swap"
-      rel="stylesheet"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
-      rel="stylesheet"
-    />
-    <script id="tailwind-config">
-      tailwind.config = {
-        darkMode: "class",
-        theme: {
-          extend: {
-            colors: {
-              "surface-container": "#1f1f1f",
-              "surface-container-lowest": "#0e0e0e",
-              "surface-container-low": "#1b1b1b",
-              surface: "#131313",
-              background: "#131313",
-              primary: "#dcb8ff",
-              "on-surface": "#e2e2e2",
-              "on-primary": "#480081",
-              "on-secondary": "#2f3131",
-              outline: "#988ca0",
-            },
-            borderRadius: {
-              DEFAULT: "0.25rem",
-              lg: "0.5rem",
-              xl: "0.75rem",
-              full: "9999px",
-            },
-            spacing: {
-              "stack-sm": "8px",
-              "stack-md": "12px",
-              "stack-lg": "24px",
-              gutter: "16px",
-              "margin-desktop": "40px",
-              "margin-mobile": "12px",
-              "section-gap": "56px",
-              "container-max": "1100px",
-            },
-            fontFamily: {
-              "headline-sm": ["Courier Prime"],
-              "headline-lg": ["Courier Prime"],
-              "body-lg": ["Courier Prime"],
-              "body-md": ["Courier Prime"],
-              "label-md": ["Courier Prime"],
-            },
-            fontSize: {
-              "headline-lg": [
-                "40px",
-                {
-                  lineHeight: "1.15",
-                  letterSpacing: "-0.01em",
-                  fontWeight: "700",
-                },
-              ],
-              "headline-md": ["28px", { lineHeight: "1.2", fontWeight: "700" }],
-              "headline-sm": ["20px", { lineHeight: "1.35", fontWeight: "700" }],
-              "body-lg": ["16px", { lineHeight: "1.5", fontWeight: "400" }],
-              "body-md": ["15px", { lineHeight: "1.5", fontWeight: "400" }],
-              "label-md": ["14px", { lineHeight: "1", fontWeight: "700" }],
-            },
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portfolio | HEANG.SONITA</title>
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Courier+Prime:wght@400;700&amp;display=swap" rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+    rel="stylesheet" />
+  <script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "surface-container": "#1f1f1f",
+            "surface-container-lowest": "#0e0e0e",
+            "surface-container-low": "#1b1b1b",
+            surface: "#131313",
+            background: "#131313",
+            primary: "#dcb8ff",
+            "on-surface": "#e2e2e2",
+            "on-primary": "#480081",
+            "on-secondary": "#2f3131",
+            outline: "#988ca0",
+          },
+          borderRadius: {
+            DEFAULT: "0.25rem",
+            lg: "0.5rem",
+            xl: "0.75rem",
+            full: "9999px",
+          },
+          spacing: {
+            unit: "4px",
+            "stack-sm": "8px",
+            gutter: "24px",
+            "stack-lg": "32px",
+            "margin-desktop": "48px",
+            "stack-md": "16px",
+            "container-max": "1200px",
+            "section-gap": "80px",
+            "margin-mobile": "16px",
+          },
+          fontFamily: {
+            "headline-sm": ["Courier Prime"],
+            "code-inline": ["Courier Prime"],
+            "headline-lg": ["Courier Prime"],
+            "body-lg": ["Courier Prime"],
+            "body-md": ["Courier Prime"],
+            "headline-md": ["Courier Prime"],
+            "headline-lg-mobile": ["Courier Prime"],
+            "label-md": ["Courier Prime"],
+          },
+          fontSize: {
+            "headline-sm": ["24px", { lineHeight: "1.4", fontWeight: "700" }],
+            "code-inline": ["14px", { lineHeight: "1.4", fontWeight: "400" }],
+            "headline-lg": [
+              "48px",
+              {
+                lineHeight: "1.2",
+                letterSpacing: "-0.02em",
+                fontWeight: "700",
+              },
+            ],
+            "body-lg": ["18px", { lineHeight: "1.6", fontWeight: "400" }],
+            "body-md": ["16px", { lineHeight: "1.6", fontWeight: "400" }],
+            "headline-md": ["32px", { lineHeight: "1.3", fontWeight: "700" }],
+            "headline-lg-mobile": [
+              "32px",
+              { lineHeight: "1.2", fontWeight: "700" },
+            ],
+            "label-md": ["14px", { lineHeight: "1", fontWeight: "700" }],
           },
         },
-      };
-    </script>
-    <style>
-      body {
-        background-color: #000000;
-        color: #e2e2e2;
-        cursor: default;
-        font-family: "Courier Prime", monospace;
+      },
+    };
+  </script>
+  <style>
+    body {
+      background-color: #000000;
+      color: #e2e2e2;
+      cursor: default;
+      font-family: "Courier Prime", monospace;
+    }
+
+    .terminal-border {
+      border: 1px solid #8a2be2;
+    }
+
+    .terminal-divider {
+      border-bottom: 1px solid #8a2be2;
+    }
+
+    .sticky-nav .header-logo,
+    .sticky-nav #main-nav a {
+      font-family: "Courier Prime", monospace !important;
+      font-size: 0.96rem !important;
+      line-height: 1.3 !important;
+      letter-spacing: 0.04em !important;
+      text-transform: none !important;
+      display: inline-flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+    }
+
+    .sticky-nav #main-nav a {
+      padding: 0.35rem 0.7rem !important;
+      font-weight: 500 !important;
+    }
+
+    .sticky-nav .header-logo {
+      font-weight: 700 !important;
+      letter-spacing: 0.08em !important;
+    }
+
+    .custom-scrollbar::-webkit-scrollbar {
+      width: 4px;
+    }
+
+    .custom-scrollbar::-webkit-scrollbar-track {
+      background: #131313;
+    }
+
+    .custom-scrollbar::-webkit-scrollbar-thumb {
+      background: #8a2be2;
+    }
+
+    .hover-fill:hover {
+      background-color: #8a2be2;
+      color: #000000 !important;
+    }
+
+    .terminal-card {
+      transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .terminal-card:hover {
+      box-shadow: 0 0 15px rgba(138, 43, 226, 0.3);
+      transform: translateY(-2px);
+    }
+
+    .terminal-card>.relative,
+    .terminal-card>.w-full,
+    .terminal-card>.h-40 {
+      overflow: hidden;
+    }
+
+    .terminal-card>.relative {
+      min-height: 12rem;
+    }
+
+    @media (min-width: 768px) {
+      .terminal-card>.relative {
+        min-height: 18rem;
       }
-      .terminal-border {
-        border: 1px solid #8a2be2;
+    }
+
+    .terminal-card img,
+    .terminal-card .h-40 {
+      filter: grayscale(1);
+      transition:
+        transform 0.5s ease,
+        filter 0.5s ease;
+    }
+
+    .terminal-card:hover img,
+    .terminal-card:hover .h-40 {
+      transform: scale(1.02);
+      filter: grayscale(0) brightness(1.06) saturate(1.06);
+    }
+
+    @keyframes scanline {
+      0% {
+        transform: translateY(-100%);
       }
-      .terminal-divider {
-        border-bottom: 1px solid #8a2be2;
+
+      100% {
+        transform: translateY(100%);
       }
-      .sticky-nav .header-logo,
-      .sticky-nav #main-nav a {
-        font-family: "Courier Prime", monospace !important;
-        font-size: 0.96rem !important;
-        line-height: 1.3 !important;
-        letter-spacing: 0.04em !important;
-        text-transform: none !important;
-        display: inline-flex !important;
-        align-items: center !important;
-        justify-content: center !important;
-      }
-      .sticky-nav #main-nav a {
-        padding: 0.35rem 0.7rem !important;
-        font-weight: 500 !important;
-      }
-      .sticky-nav .header-logo {
-        font-weight: 700 !important;
-        letter-spacing: 0.08em !important;
-      }
-      .custom-scrollbar::-webkit-scrollbar {
-        width: 4px;
-      }
-      .custom-scrollbar::-webkit-scrollbar-track {
-        background: #131313;
-      }
-      .custom-scrollbar::-webkit-scrollbar-thumb {
-        background: #8a2be2;
-      }
-      .hover-fill:hover {
-        background-color: #8a2be2;
-        color: #000000 !important;
-      }
-      .terminal-card {
-        transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
-      }
-      .terminal-card:hover {
-        box-shadow: 0 0 15px rgba(138, 43, 226, 0.3);
-        transform: translateY(-2px);
-      }
-      .terminal-card > .relative,
-      .terminal-card > .w-full,
-      .terminal-card > .h-40 {
-        overflow: hidden;
-      }
-      .terminal-card > .relative {
-        min-height: 12rem;
-      }
-      @media (min-width: 768px) {
-        .terminal-card > .relative {
-          min-height: 18rem;
-        }
-      }
-      .terminal-card img,
-      .terminal-card .h-40 {
-        filter: grayscale(1);
-        transition:
-          transform 0.5s ease,
-          filter 0.5s ease;
-      }
-      .terminal-card:hover img,
-      .terminal-card:hover .h-40 {
-        transform: scale(1.02);
-        filter: grayscale(0) brightness(1.06) saturate(1.06);
-      }
-      @keyframes scanline {
-        0% {
-          transform: translateY(-100%);
-        }
-        100% {
-          transform: translateY(100%);
-        }
-      }
-      .scanline {
-        width: 100%;
-        height: 2px;
-        background: rgba(138, 43, 226, 0.1);
-        position: fixed;
-        top: 0;
+    }
+
+    .scanline {
+      width: 100%;
+      height: 2px;
+      background: rgba(138, 43, 226, 0.1);
+      position: fixed;
+      top: 0;
+      left: 0;
+      pointer-events: none;
+      animation: scanline 8s linear infinite;
+      z-index: 50;
+    }
+
+    @media (max-width: 767px) {
+      #main-nav.flex {
+        position: absolute;
+        top: 100%;
         left: 0;
-        pointer-events: none;
-        animation: scanline 8s linear infinite;
-        z-index: 50;
+        right: 0;
+        z-index: 40;
+        background: rgba(19, 19, 19, 0.96);
+        border-top: 1px solid #8a2be2;
+        border-bottom-left-radius: 0.75rem;
+        border-bottom-right-radius: 0.75rem;
+        padding: 1rem 1.25rem 1.25rem;
+        flex-direction: column;
       }
-      @media (max-width: 767px) {
-        #main-nav.flex {
-          position: absolute;
-          top: 100%;
-          left: 0;
-          right: 0;
-          z-index: 40;
-          background: rgba(19, 19, 19, 0.96);
-          border-top: 1px solid #8a2be2;
-          border-bottom-left-radius: 0.75rem;
-          border-bottom-right-radius: 0.75rem;
-          padding: 1rem 1.25rem 1.25rem;
-          flex-direction: column;
-        }
-        #main-nav a {
-          width: 100%;
-        }
+
+      #main-nav a {
+        width: 100%;
       }
-    </style>
-  </head>
-  <body
-    class="custom-scrollbar bg-background text-on-surface min-h-screen antialiased"
-  >
-    <div class="scanline"></div>
-    <nav
-      class="sticky-nav w-full top-0 sticky bg-background dark:bg-background border-b border-primary z-50"
-    >
-      <div
-        class="relative flex justify-between items-center px-margin-mobile md:px-margin-desktop py-stack-md w-full max-w-container-max mx-auto"
-      >
-        <a
-          class="header-logo text-primary font-body-md text-body-md font-bold"
-          href="index.html"
-          >HEANG.SONITA</a
-        >
-        <nav
-          id="main-nav"
-          class="hidden md:flex flex-col md:flex-row items-start md:items-center gap-stack-md md:gap-gutter"
-        >
-          <a
-            class="text-on-surface-variant hover:text-primary transition-colors duration-200 font-body-md text-body-md"
-            href="index.html"
-            >Home</a
-          >
-          <a
-            class="text-on-surface-variant hover:text-primary transition-colors duration-200 font-body-md text-body-md"
-            href="resume.html"
-            >Resume</a
-          >
-          <a
-            class="text-primary font-bold border-b-2 border-primary pb-1 font-body-md text-body-md"
-            href="portfolio.html"
-            >Portfolio</a
-          >
-          <a
-            class="text-on-surface-variant hover:text-primary transition-colors duration-200 font-body-md text-body-md"
-            href="contact.html"
-            >Contact</a
-          >
-        </nav>
-        <div class="flex items-center gap-2">
-          <button
-            id="mobile-menu-btn"
-            class="md:hidden border border-primary px-stack-md py-stack-sm text-primary hover:bg-primary-container hover:text-black transition-all active:opacity-80"
-          >
-            ☰
-          </button>
+    }
+  </style>
+</head>
+
+<body class="custom-scrollbar bg-background text-on-surface min-h-screen antialiased">
+  <div class="scanline"></div>
+  <nav class="sticky-nav w-full top-0 sticky bg-background dark:bg-background border-b border-primary z-50">
+    <div
+      class="relative flex justify-between items-center px-margin-mobile md:px-margin-desktop py-stack-md w-full max-w-container-max mx-auto">
+      <a class="header-logo text-primary font-body-md text-body-md font-bold" href="index.html">HEANG.SONITA</a>
+      <nav id="main-nav"
+        class="hidden md:flex flex-col md:flex-row items-start md:items-center gap-stack-md md:gap-gutter">
+        <a class="text-on-surface-variant hover:text-primary transition-colors duration-200 font-body-md text-body-md"
+          href="index.html">Home</a>
+        <a class="text-on-surface-variant hover:text-primary transition-colors duration-200 font-body-md text-body-md"
+          href="resume.html">Resume</a>
+        <a class="text-primary font-bold border-b-2 border-primary pb-1 font-body-md text-body-md"
+          href="portfolio.html">Portfolio</a>
+        <a class="text-on-surface-variant hover:text-primary transition-colors duration-200 font-body-md text-body-md"
+          href="contact.html">Contact</a>
+      </nav>
+      <div class="flex items-center gap-2">
+        <button id="mobile-menu-btn"
+          class="md:hidden border border-primary px-stack-md py-stack-sm text-primary hover:bg-primary-container hover:text-black transition-all active:opacity-80">
+          ☰
+        </button>
+      </div>
+    </div>
+  </nav>
+  <main class="min-h-screen w-full max-w-container-max mx-auto px-4 md:px-8 py-10 md:py-16 space-y-10 md:space-y-16">
+    <header class="space-y-stack-md">
+      <h1 class="font-headline-lg text-headline-lg text-primary border-l-4 border-primary pl-stack-md">
+        PORTFOLIO_OUTPUT
+      </h1>
+      <p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl">
+        A structured log of my engineering milestones, international
+        leadership engagements, and technical fellowships.
+      </p>
+    </header>
+    <section class="space-y-stack-lg">
+      <div class="flex items-center gap-stack-md terminal-divider pb-stack-sm">
+        <span class="material-symbols-outlined text-primary">terminal</span>
+        <h2 class="font-headline-md text-headline-md text-primary">
+          Software Engineering Projects
+        </h2>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div class="terminal-card terminal-border bg-surface-container-lowest overflow-hidden flex flex-col">
+          <div class="p-stack-md terminal-divider flex justify-between items-center bg-surface-container-low">
+            <a href="https://github.com/Sonita-Dev/coupon-management-system" target="_blank" rel="noreferrer"
+              class="font-label-md text-label-md text-primary hover:underline flex items-center gap-1">
+              SRC: COUPON_ENGINE_API
+              <span class="material-symbols-outlined text-[14px]">open_in_new</span>
+            </a>
+            <div class="flex gap-2">
+              <span class="w-3 h-3 border border-primary rounded-full"></span>
+              <span class="w-3 h-3 border border-primary rounded-full"></span>
+            </div>
+          </div>
+          <div class="p-stack-md space-y-stack-sm flex-grow">
+            <p class="font-body-md text-body-md text-on-surface">
+              Laravel-based business rules and validation engine for creating, managing, and applying discount coupons
+              with optimized constraints.
+            </p>
+            <div class="flex flex-wrap gap-stack-sm py-stack-sm">
+              <span
+                class="border border-outline-variant px-2 py-1 text-[12px] font-code-inline text-on-surface-variant">LARAVEL</span>
+              <span
+                class="border border-outline-variant px-2 py-1 text-[12px] font-code-inline text-on-surface-variant">MYSQL</span>
+              <span
+                class="border border-outline-variant px-2 py-1 text-[12px] font-code-inline text-on-surface-variant">PHPUNIT</span>
+              <span
+                class="border border-outline-variant px-2 py-1 text-[12px] font-code-inline text-on-surface-variant">ELOQUENT</span>
+            </div>
+          </div>
+          <div class="p-stack-md bg-surface-container-low border-t border-primary/30">
+            <p class="font-label-md text-label-md text-primary mb-1">
+              REFLECTION_LOG:
+            </p>
+            <p class="font-code-inline text-code-inline text-on-surface-variant italic">
+              Core takeaways: DB-level unique constraint handling with soft deletes to allow code reuse. Areas of
+              improvement: Integrating Redis cache to speed up coupon validity checks in checkout.
+            </p>
+          </div>
+        </div>
+        <div class="terminal-card terminal-border bg-surface-container-lowest overflow-hidden flex flex-col">
+          <div class="p-stack-md terminal-divider flex justify-between items-center bg-surface-container-low">
+            <a href="https://github.com/Sonita-Dev/coupon-management-system" target="_blank" rel="noreferrer"
+              class="font-label-md text-label-md text-primary hover:underline flex items-center gap-1">
+              SRC: COUPON_ADMIN_PORTAL
+              <span class="material-symbols-outlined text-[14px]">open_in_new</span>
+            </a>
+            <div class="flex gap-2">
+              <span class="w-3 h-3 border border-primary rounded-full"></span>
+              <span class="w-3 h-3 border border-primary rounded-full"></span>
+            </div>
+          </div>
+          <div class="p-stack-md space-y-stack-sm flex-grow">
+            <p class="font-body-md text-body-md text-on-surface">
+              Interactive admin dashboard built with Tailwind CSS, Alpine.js, and Blade templates featuring coupon CRUD
+              forms, authentication screens, and live analytics.
+            </p>
+            <div class="flex flex-wrap gap-stack-sm py-stack-sm">
+              <span
+                class="border border-outline-variant px-2 py-1 text-[12px] font-code-inline text-on-surface-variant">TAILWIND
+                CSS</span>
+              <span
+                class="border border-outline-variant px-2 py-1 text-[12px] font-code-inline text-on-surface-variant">ALPINE.JS</span>
+              <span
+                class="border border-outline-variant px-2 py-1 text-[12px] font-code-inline text-on-surface-variant">VITE</span>
+              <span
+                class="border border-outline-variant px-2 py-1 text-[12px] font-code-inline text-on-surface-variant">BLADE</span>
+            </div>
+          </div>
+          <div class="p-stack-md bg-surface-container-low border-t border-primary/30">
+            <p class="font-label-md text-label-md text-primary mb-1">
+              REFLECTION_LOG:
+            </p>
+            <p class="font-code-inline text-code-inline text-on-surface-variant italic">
+              Core takeaways: Responsive Tailwind grid layouts paired with lightweight Alpine.js interactivity. Areas of
+              improvement: Adding real-time charts using Chart.js for better analytics presentation.
+            </p>
+          </div>
         </div>
       </div>
-    </nav>
-    <main
-      class="min-h-screen w-full max-w-container-max mx-auto px-4 md:px-8 py-10 md:py-16 space-y-10 md:space-y-16"
-    >
-      <header class="space-y-stack-md">
-        <h1
-          class="font-headline-lg text-headline-lg text-primary border-l-4 border-primary pl-stack-md"
-        >
-          PORTFOLIO_OUTPUT
-        </h1>
-        <p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl">
-          A structured log of my engineering milestones, international
-          leadership engagements, and technical fellowships.
-        </p>
-      </header>
-      <section class="space-y-stack-lg">
-        <div
-          class="flex items-center gap-stack-md terminal-divider pb-stack-sm"
-        >
-          <span class="material-symbols-outlined text-primary">terminal</span>
-          <h2 class="font-headline-md text-headline-md text-primary">
-            Software Engineering Projects
-          </h2>
-        </div>
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <div
-            class="terminal-card terminal-border bg-surface-container-lowest overflow-hidden flex flex-col"
-          >
-            <div
-              class="p-stack-md terminal-divider flex justify-between items-center bg-surface-container-low"
-            >
-              <span class="font-label-md text-label-md text-primary"
-                >SRC: SECURE_VAULT_API</span
-              >
-              <div class="flex gap-2">
-                <span class="w-3 h-3 border border-primary rounded-full"></span>
-                <span class="w-3 h-3 border border-primary rounded-full"></span>
-              </div>
+    </section>
+
+    <section class="space-y-stack-lg">
+      <div class="flex items-center gap-stack-md terminal-divider pb-stack-sm">
+        <span class="material-symbols-outlined text-primary">science</span>
+        <h2 class="font-headline-md text-headline-md text-primary">
+          Creative Content Lab
+        </h2>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div class="terminal-card terminal-border bg-surface-container-lowest overflow-hidden flex flex-col">
+          <div class="p-stack-md terminal-divider flex justify-between items-center bg-surface-container-low">
+            <a href="https://www.youtube.com/@HeangSonita-k2f" target="_blank" rel="noreferrer"
+              class="font-label-md text-label-md text-primary hover:underline flex items-center gap-1">
+              MEDIA: EDUCATION_VLOG
+              <span class="material-symbols-outlined text-[14px]">open_in_new</span>
+            </a>
+            <div class="flex gap-2">
+              <span class="w-3 h-3 border border-primary rounded-full"></span>
+              <span class="w-3 h-3 border border-primary rounded-full"></span>
             </div>
-            <div class="p-stack-md space-y-stack-sm flex-grow">
+          </div>
+          <div class="p-stack-md space-y-stack-sm flex-grow">
+            <p class="font-body-md text-body-md text-on-surface">
+              Empowering Cambodian high school students through motivational video content, exam preparation guides, and
+              self-study techniques shared on YouTube.
+            </p>
+            <div class="flex gap-4 py-1">
+              <a href="https://www.youtube.com/@HeangSonita-k2f" target="_blank" rel="noreferrer"
+                class="text-[#dcb8ff] hover:underline font-code-inline text-sm flex items-center gap-1">
+                YouTube <span class="material-symbols-outlined text-[14px]">open_in_new</span>
+              </a>
+              <a href="https://www.facebook.com/share/1B1tSSjeTS/?mibextid=wwXIfr" target="_blank" rel="noreferrer"
+                class="text-[#dcb8ff] hover:underline font-code-inline text-sm flex items-center gap-1">
+                Facebook <span class="material-symbols-outlined text-[14px]">open_in_new</span>
+              </a>
+              <a href="https://www.tiktok.com/@sonitaheang?_r=1&amp;_t=ZS-93cF4CLUhnT" target="_blank" rel="noreferrer"
+                class="text-[#dcb8ff] hover:underline font-code-inline text-sm flex items-center gap-1">
+                TikTok <span class="material-symbols-outlined text-[14px]">open_in_new</span>
+              </a>
+              <a href="https://www.instagram.com/heang_.sonita?igsh=MTZpNmFtanZ3bXZmbA%3D%3D&amp;utm_source=qr" target="_blank" rel="noreferrer"
+                class="text-[#dcb8ff] hover:underline font-code-inline text-sm flex items-center gap-1">
+                Instagram <span class="material-symbols-outlined text-[14px]">open_in_new</span>
+              </a>
+            </div>
+            <div class="flex flex-wrap gap-stack-sm py-stack-sm">
+              <span
+                class="border border-outline-variant px-2 py-1 text-[12px] font-code-inline text-on-surface-variant">YOUTUBE</span>
+              <span
+                class="border border-outline-variant px-2 py-1 text-[12px] font-code-inline text-on-surface-variant">VIDEO
+                PRODUCTION</span>
+              <span
+                class="border border-outline-variant px-2 py-1 text-[12px] font-code-inline text-on-surface-variant">PUBLIC
+                SPEAKING</span>
+            </div>
+          </div>
+          <div class="p-stack-md bg-surface-container-low border-t border-primary/30">
+            <p class="font-label-md text-label-md text-primary mb-1">
+              REFLECTION_LOG:
+            </p>
+            <p class="font-code-inline text-code-inline text-on-surface-variant italic">
+              Core takeaways: Utilizing digital media to foster online learning communities. Areas of improvement:
+              Exploring short-form tech and programming content to bridge software engineering with media.
+            </p>
+          </div>
+        </div>
+        <div class="terminal-card terminal-border bg-surface-container-lowest overflow-hidden flex flex-col">
+          <div class="p-stack-md terminal-divider flex justify-between items-center bg-surface-container-low">
+            <span class="font-label-md text-label-md text-primary flex items-center gap-1">
+              MEDIA: BRANDING_INFOGRAPHICS
+            </span>
+            <div class="flex gap-2">
+              <span class="w-3 h-3 border border-primary rounded-full"></span>
+              <span class="w-3 h-3 border border-primary rounded-full"></span>
+            </div>
+          </div>
+          <div class="p-stack-md space-y-stack-sm flex-grow">
+            <p class="font-body-md text-body-md text-on-surface">
+              Designing high-engagement study templates, worksheets, and infographic slides shared across Facebook and
+              TikTok communities to promote active learning.
+            </p>
+            <div class="flex flex-wrap gap-stack-sm py-stack-sm">
+              <span
+                class="border border-outline-variant px-2 py-1 text-[12px] font-code-inline text-on-surface-variant">FIGMA</span>
+              <span
+                class="border border-outline-variant px-2 py-1 text-[12px] font-code-inline text-on-surface-variant">GRAPHIC
+                DESIGN</span>
+              <span
+                class="border border-outline-variant px-2 py-1 text-[12px] font-code-inline text-on-surface-variant">BRANDING</span>
+            </div>
+          </div>
+          <div class="p-stack-md bg-surface-container-low border-t border-primary/30">
+            <p class="font-label-md text-label-md text-primary mb-1">
+              REFLECTION_LOG:
+            </p>
+            <p class="font-code-inline text-code-inline text-on-surface-variant italic">
+              Core takeaways: Designing templates with a focus on visual hierarchy and student cognitive load. Areas of
+              improvement: Coding interactive templates using React or Tailwind.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="space-y-stack-lg">
+      <div class="flex items-center gap-stack-md terminal-divider pb-stack-sm">
+        <span class="material-symbols-outlined text-primary">public</span>
+        <h2 class="font-headline-md text-headline-md text-primary">
+          International & National Programs
+        </h2>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="terminal-card terminal-border bg-surface-container-lowest flex flex-col">
+          <div class="relative aspect-[4/3] w-full overflow-hidden bg-black/20 terminal-divider">
+            <img src="Public/worldbank.jpg"
+              alt="World Bank Group Youth Summit delegate certificate."
+              class="absolute inset-0 h-full w-full object-contain object-center bg-black/10" />
+          </div>
+
+          <div class="p-stack-md space-y-stack-sm flex-grow">
+            <h3 class="font-headline-sm text-headline-sm text-primary">
+              World Bank Group Youth Summit 2026
+            </h3>
+            <p class="font-body-md text-body-md text-on-surface-variant">
+              So proud to represent as a delegate at the @WorldBank Youth
+              Summit! This year’s theme, #FutureWorks: Designing Jobs for the
+              Digital Age, sparked some amazing conversations. Had the chance
+              to connect with global leaders and peers to talk about digital
+              skills, innovation, and how we shape the future of work.
+            </p>
+          </div>
+          <div class="p-stack-md bg-surface-container-low border-t border-primary/30">
+            <p class="font-label-md text-label-md text-primary">
+              REFLECTION:
+            </p>
+            <p class="font-code-inline text-code-inline text-on-surface-variant italic">
+              The future of work is being designed right now, and the energy
+              from global leaders and fellow delegates was incredibly
+              inspiring.
+            </p>
+          </div>
+        </div>
+        <div class="terminal-card terminal-border bg-surface-container-lowest flex flex-col">
+          <div class="relative aspect-[4/3] w-full overflow-hidden bg-black/20 terminal-divider">
+            <img src="Public/IMG_8965.PNG"
+              alt="SparkMeet Women Innovator Bootcamp certificate of completion."
+              class="absolute inset-0 h-full w-full object-contain object-center bg-black/10" />
+          </div>
+          <div class="p-stack-md space-y-stack-sm flex-grow">
+            <h3 class="font-headline-sm text-headline-sm text-primary">
+              SparkMeet Season 5: Women Innovator Bootcamp 2026
+            </h3>
+            <p class="font-body-md text-body-md text-on-surface-variant">
+              Participating in this bootcamp was an empowering experience that
+              sharpened my ability to design digital products with a strategic
+              mindset. Collaborating with inspiring women innovators taught me
+              how to combine technology and targeted problem-solving,
+              equipping me with the confidence to pitch and lead impactful
+              digital ventures.
+            </p>
+          </div>
+          <div class="p-stack-md bg-surface-container-low border-t border-primary/30">
+            <p class="font-label-md text-label-md text-primary">
+              REFLECTION:
+            </p>
+            <p class="font-code-inline text-code-inline text-on-surface-variant italic">
+              This program beautifully bridged tech innovation with strategic
+              entrepreneurship. Mastering digital product design and pitching
+              under the guidance of industry mentors has greatly elevated my
+              leadership skills, transforming how I approach problem-solving
+              in the tech space.
+            </p>
+          </div>
+        </div>
+        <div class="terminal-card terminal-border bg-surface-container-lowest flex flex-col">
+          <div class="relative aspect-[4/3] w-full overflow-hidden bg-black/20 terminal-divider">
+            <img src="Public/US_relation.JPG"
+              alt="Ambassador's Youth Forum: Voices of Tomorrow delegate certificate."
+              class="absolute inset-0 h-full w-full object-contain object-center bg-black/10" />
+          </div>
+          <div class="p-stack-md space-y-stack-sm flex-grow">
+            <h3 class="font-headline-sm text-headline-sm text-primary">
+              Ambassador’s Youth Forum: Voices of Tomorrow
+            </h3>
+            <p class="font-body-md text-body-md text-on-surface-variant">
+              Selected as a delegate for the prestigious Ambassador’s Youth
+              Forum, "Voices of Tomorrow," I engaged directly with diplomats
+              on U.S.–Cambodia relations. During the forum, I contributed to
+              high-level policy discussions focused on national branding and
+              leveraging local products for global competitiveness, while
+              strengthening my skills in youth advocacy and leadership.
+            </p>
+          </div>
+          <div class="p-stack-md bg-surface-container-low border-t border-primary/30">
+            <p class="font-label-md text-label-md text-primary">
+              REFLECTION:
+            </p>
+            <p class="font-code-inline text-code-inline text-on-surface-variant italic">
+              This forum offered a masterclass in diplomacy and economic
+              strategy. Exchanging ideas on U.S.–Cambodia relations and local
+              product leverage gave me a broader perspective on policy,
+              empowering me to more effectively champion impactful initiatives
+              in my community.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="space-y-stack-lg">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="terminal-card terminal-border bg-surface-container-lowest flex flex-col">
+          <div class="relative aspect-[4/3] w-full overflow-hidden bg-black/20 terminal-divider">
+            <img src="Public/cisco.jpg"
+              alt="Cisco Networking Academy certificate for Discovering Entrepreneurship."
+              class="absolute inset-0 h-full w-full object-contain object-center bg-black/10" />
+          </div>
+          <div class="p-stack-md space-y-stack-sm flex-grow">
+            <h3 class="font-headline-sm text-headline-sm text-primary">
+              Discovering Entrepreneurship - Cisco Networking Academy
+            </h3>
+            <p class="font-body-md text-body-md text-on-surface-variant">
+              As a student creator representing Cambodia, I completed
+              intensive online masterclasses and a one-week hybrid hackathon
+              at NTU Singapore focused on digital literacy and AI ethics,
+              while gaining global industry insights through corporate visits
+              to TikTok, SPH Media, and Mediacorp.
+            </p>
+          </div>
+          <div class="p-stack-md bg-surface-container-low border-t border-primary/30">
+            <p class="font-label-md text-label-md text-primary">
+              REFLECTION:
+            </p>
+            <p class="font-code-inline text-code-inline text-on-surface-variant italic">
+              This program deepened my understanding of AI ethics and media
+              literacy, while the hands-on hackathon and corporate visits
+              expanded my global perspective on responsible digital content
+              creation
+            </p>
+          </div>
+        </div>
+        <div class="terminal-card terminal-border bg-surface-container-lowest flex flex-col">
+          <div class="relative aspect-[4/3] w-full overflow-hidden bg-black/20 terminal-divider">
+            <img src="Public/i-SEA.JPG"
+              alt="i-SEA Fellowship Programme alumni certificate."
+              class="absolute inset-0 h-full w-full object-contain object-center bg-black/10" />
+          </div>
+          <div class="p-stack-md space-y-stack-sm flex-grow">
+            <h3 class="font-headline-sm text-headline-sm text-primary">
+              i-SEA Fellowship Programme 2025 – Alumni
+            </h3>
+            <p class="font-body-md text-body-md text-on-surface-variant">
+              Represented Cambodia as a student content creator at NTU
+              Singapore, completing intensive training in AI ethics, deepfake
+              detection, and media law to build an ethical foundation for
+              digital storytelling and content creation.
+            </p>
+          </div>
+          <div class="p-stack-md bg-surface-container-low border-t border-primary/30">
+            <p class="font-label-md text-label-md text-primary">
+              REFLECTION:
+            </p>
+            <p class="font-code-inline text-code-inline text-on-surface-variant italic">
+              StHonored to represent Cambodia at NTU Singapore! As a student
+              creator, mastering AI ethics and media law is essential. An
+              incredible week of masterclasses, a regional hackathon, and tech
+              visits like TikTok—ready to bring these insights back to my
+              content!
+            </p>
+          </div>
+        </div>
+        <div class="terminal-card terminal-border bg-surface-container-lowest flex flex-col">
+          <div class="relative aspect-[4/3] w-full overflow-hidden bg-black/20 terminal-divider">
+            <img src="Public/IMG_5158.JPG"
+              alt="Sisters of Code Web Development & UX/UI Design certificate of completion."
+              class="absolute inset-0 h-full w-full object-contain object-center bg-black/10" />
+          </div>
+          <div class="p-stack-md space-y-stack-sm flex-grow">
+            <h3 class="font-headline-sm text-headline-sm text-primary">
+              Sisters of Code: Web Development & UX/UI Design
+            </h3>
+            <p class="font-body-md text-body-md text-on-surface-variant">
+              I was lucky enough to receive a prestigious coding scholarship
+              dedicated to supporting women in tech. Through the program, I
+              got to dive into team projects using GitHub, which was amazing
+              for sharpening my version control and problem-solving skills
+              alongside some incredibly talented peers.
+            </p>
+          </div>
+          <div class="p-stack-md bg-surface-container-low border-t border-primary/30">
+            <p class="font-label-md text-label-md text-primary">
+              REFLECTION:
+            </p>
+            <p class="font-code-inline text-code-inline text-on-surface-variant italic">
+              Receiving this tech scholarship was such an incredible milestone
+              for me. Getting to collaborate on GitHub projects with a group
+              of talented women completely shifted how I view development. It
+              wasn't just about learning to code—it was about real teamwork,
+              solving problems under pressure, and building the confidence to
+              realize that I truly belong in this industry.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="space-y-stack-lg">
+      <div class="flex items-center gap-stack-md terminal-divider pb-stack-sm">
+        <span class="material-symbols-outlined text-primary">badge</span>
+        <h2 class="font-headline-md text-headline-md text-primary">
+          Certificates & Recognition
+        </h2>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-container-max mx-auto">
+        <article
+          class="terminal-card bg-surface-container-lowest overflow-hidden rounded-xl flex flex-col md:flex-row items-stretch">
+          <div class="md:w-1/2 w-full bg-black/10 flex items-center justify-center min-h-[420px] md:min-h-[520px]">
+            <img src="Public/Etec.JPG"
+              alt="Certificate of completion from the Engineering of Technology and Electronic Center."
+              class="w-full h-full object-contain bg-transparent" />
+          </div>
+          <div class="md:w-1/2 w-full p-5 md:p-6 flex flex-col justify-center gap-4">
+            <div>
+              <div class="flex items-start justify-between gap-4">
+                <h3 class="font-headline-sm text-headline-sm text-primary leading-snug">
+                  Computer Training Courses — C / C++ / OOP & Algorithms
+                </h3>
+                <span class="material-symbols-outlined text-primary text-lg">badge</span>
+              </div>
+              <p class="font-body-md text-body-md text-on-surface-variant leading-relaxed mt-2">
+                Successfully completed intensive academic and practical requirements covering Basic and Advanced
+                C, C++, Object-Oriented Programming (OOP), and core algorithm design. Built a strong foundation
+                in software architecture, data structures, and algorithmic problem-solving.
+              </p>
+            </div>
+          </div>
+        </article>
+
+        <article
+          class="terminal-card bg-surface-container-lowest overflow-hidden rounded-xl flex flex-col md:flex-row items-stretch">
+          <div class="md:w-1/2 w-full bg-black/10 flex items-center justify-center min-h-[420px] md:min-h-[520px]">
+            <img src="Public/Deloitte.JPG" alt="Deloitte Work Readiness Station certificate."
+              class="w-full h-full object-contain bg-transparent" />
+          </div>
+          <div class="md:w-1/2 w-full p-5 md:p-6 flex flex-col justify-center gap-4">
+            <div>
+              <div class="flex items-start justify-between gap-4">
+                <h3 class="font-headline-sm text-headline-sm text-primary leading-snug">
+                  Deloitte Work Readiness Station 1–2
+                </h3>
+                <span class="material-symbols-outlined text-primary text-lg">verified</span>
+              </div>
+              <p class="font-body-md text-body-md text-on-surface-variant leading-relaxed mt-2">
+                Completed the Deloitte Work Readiness Station program in collaboration with Sisters of Code,
+                focusing on corporate professionalism, workplace technical skills, and practical readiness for
+                the digital workforce.
+              </p>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+    <section class="space-y-stack-lg pb-stack-lg">
+      <div class="flex items-center gap-stack-md terminal-divider pb-stack-sm">
+        <span class="material-symbols-outlined text-primary">school</span>
+        <h2 class="font-headline-md text-headline-md text-primary">
+          Honors & awards
+        </h2>
+      </div>
+      <div class="grid grid-cols-1 gap-6">
+        <div class="terminal-card terminal-border bg-surface-container-lowest overflow-hidden">
+          <div class="flex flex-col md:flex-row h-full">
+            <div
+              class="md:w-2/5 w-full h-56 md:h-auto border-b md:border-b-0 md:border-r border-primary/40 overflow-hidden bg-black/20">
+              <img src="Public/guest_speaker.JPG" alt="Certificate of Appreciation for Guest Speaker at Management Foundation Studies Grand Launch."
+                class="h-full w-full object-contain object-center" />
+            </div>
+            <div class="flex-1 p-stack-md space-y-stack-sm">
+              <div class="flex justify-between items-start gap-2">
+                <h3 class="font-headline-sm text-headline-sm text-primary">
+                  Guest Speaker - Management Foundation Studies Grand Launch
+                </h3>
+                <span class="material-symbols-outlined text-primary shrink-0" data-weight="fill">verified</span>
+              </div>
               <p class="font-body-md text-body-md text-on-surface">
-                Distributed database architecture with zero-knowledge proof
-                encryption protocols.
+                Awarded a Certificate of Appreciation for serving as a guest
+                speaker at the Management Foundation Studies Grand Launch held
+                at Hyatt Regency Phnom Penh. Delivered an engaging
+                presentation titled "From Passion to Profession: Future-ready
+                Skills that Make YOU Stand Out," sharing insights on career
+                readiness and essential skills for the digital age.
               </p>
-              <div class="flex flex-wrap gap-stack-sm py-stack-sm">
-                <span
-                  class="border border-outline-variant px-2 py-1 text-[12px] font-code-inline text-on-surface-variant"
-                  >RUST</span
-                >
-                <span
-                  class="border border-outline-variant px-2 py-1 text-[12px] font-code-inline text-on-surface-variant"
-                  >POSTGRESQL</span
-                >
-                <span
-                  class="border border-outline-variant px-2 py-1 text-[12px] font-code-inline text-on-surface-variant"
-                  >KUBERNETES</span
-                >
-              </div>
-            </div>
-            <div
-              class="p-stack-md bg-surface-container-low border-t border-primary/30"
-            >
-              <p class="font-label-md text-label-md text-primary mb-1">
-                REFLECTION_LOG:
-              </p>
-              <p
-                class="font-code-inline text-code-inline text-on-surface-variant italic"
-              >
-                Core takeaways: Deep understanding of memory safety. Areas of
-                improvement: Refactoring the legacy encryption module for better
-                throughput.
-              </p>
+
             </div>
           </div>
-          <div
-            class="terminal-card terminal-border bg-surface-container-lowest overflow-hidden flex flex-col"
-          >
+        </div>
+
+        <div class="terminal-card terminal-border bg-surface-container-lowest overflow-hidden">
+          <div class="flex flex-col md:flex-row h-full">
             <div
-              class="p-stack-md terminal-divider flex justify-between items-center bg-surface-container-low"
-            >
-              <span class="font-label-md text-label-md text-primary"
-                >SRC: NEURAL_PATH_VISUALIZER</span
-              >
-              <div class="flex gap-2">
-                <span class="w-3 h-3 border border-primary rounded-full"></span>
-                <span class="w-3 h-3 border border-primary rounded-full"></span>
-              </div>
+              class="md:w-2/5 w-full h-56 md:h-auto border-b md:border-b-0 md:border-r border-primary/40 overflow-hidden bg-black/20">
+              <img src="Public/Aokas.JPG" alt="Media Ambassador certificate for AOKAS Expo 2025."
+                class="h-full w-full object-contain object-center" />
             </div>
-            <div class="p-stack-md space-y-stack-sm flex-grow">
+            <div class="flex-1 p-stack-md space-y-stack-sm">
+              <div class="flex justify-between items-start gap-2">
+                <h3 class="font-headline-sm text-headline-sm text-primary">
+                  Media Ambassador - AOKAS Expo 2025
+                </h3>
+                <span class="material-symbols-outlined text-primary shrink-0" data-weight="fill">verified</span>
+              </div>
               <p class="font-body-md text-body-md text-on-surface">
-                Interactive 3D visualization tool for mapping neural network
-                weight optimizations.
+                Awarded a Certificate of Appreciation in recognition of my
+                role and support as the official Media Ambassador for the
+                AOKAS Expo held on July 25-27, 2025, at Connexion, Phnom Penh.
+                Leveraged digital communication and media strategy to promote
+                the event, engage diverse audiences, and drive community
+                impact.
               </p>
-              <div class="flex flex-wrap gap-stack-sm py-stack-sm">
-                <span
-                  class="border border-outline-variant px-2 py-1 text-[12px] font-code-inline text-on-surface-variant"
-                  >TYPESCRIPT</span
-                >
-                <span
-                  class="border border-outline-variant px-2 py-1 text-[12px] font-code-inline text-on-surface-variant"
-                  >THREE.JS</span
-                >
-                <span
-                  class="border border-outline-variant px-2 py-1 text-[12px] font-code-inline text-on-surface-variant"
-                  >PYTORCH</span
-                >
-              </div>
-            </div>
-            <div
-              class="p-stack-md bg-surface-container-low border-t border-primary/30"
-            >
-              <p class="font-label-md text-label-md text-primary mb-1">
-                REFLECTION_LOG:
-              </p>
-              <p
-                class="font-code-inline text-code-inline text-on-surface-variant italic"
-              >
-                Key strengths: High performance rendering of large datasets.
-                Improvement: Mobile responsive interaction models for UI
-                components.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
 
-      <section class="space-y-stack-lg">
-        <div
-          class="flex items-center gap-stack-md terminal-divider pb-stack-sm"
-        >
-          <span class="material-symbols-outlined text-primary">public</span>
-          <h2 class="font-headline-md text-headline-md text-primary">
-            International & National Programs
-          </h2>
-        </div>
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-          <div
-            class="terminal-card terminal-border bg-surface-container-lowest flex flex-col"
-          >
-            <div class="relative aspect-[4/3] w-full overflow-hidden">
-              <img
-                src="Public/worldbank.jpg"
-                alt="Delegates at the World Bank Group Youth Summit with a modern conference setting."
-                class="absolute inset-0 h-full w-full object-cover object-center"
-              />
             </div>
+          </div>
+        </div>
 
-            <div class="p-stack-md space-y-stack-sm flex-grow">
-              <h3 class="font-headline-sm text-headline-sm text-primary">
-                World Bank Group Youth Summit 2026
-              </h3>
-              <p class="font-body-md text-body-md text-on-surface-variant">
-                So proud to represent as a delegate at the @WorldBank Youth
-                Summit! This year’s theme, #FutureWorks: Designing Jobs for the
-                Digital Age, sparked some amazing conversations. Had the chance
-                to connect with global leaders and peers to talk about digital
-                skills, innovation, and how we shape the future of work.
-              </p>
-            </div>
+        <div class="terminal-card terminal-border bg-surface-container-lowest overflow-hidden">
+          <div class="flex flex-col md:flex-row h-full">
             <div
-              class="p-stack-md bg-surface-container-low border-t border-primary/30"
-            >
-              <p class="font-label-md text-label-md text-primary">
-                REFLECTION:
-              </p>
-              <p
-                class="font-code-inline text-code-inline text-on-surface-variant italic"
-              >
-                The future of work is being designed right now, and the energy
-                from global leaders and fellow delegates was incredibly
-                inspiring.
-              </p>
+              class="md:w-2/5 w-full h-56 md:h-auto border-b md:border-b-0 md:border-r border-primary/40 overflow-hidden bg-black/20">
+              <img src="Public/Dream.JPG" alt="Media Ambassador certificate for DREAM Cambodia Academia Challenge 2025."
+                class="h-full w-full object-contain object-center" />
             </div>
-          </div>
-          <div
-            class="terminal-card terminal-border bg-surface-container-lowest flex flex-col"
-          >
-            <div
-              class="relative aspect-[4/3] w-full overflow-hidden bg-black/20"
-            >
-              <img
-                src="Public/IMG_8965.PNG"
-                alt="A digital render of a symmetrical circular assembly room with purple light strips glowing along the floor, symbolizing regional cooperation and diplomatic symposiums in a sharp, futuristic cyberpunk aesthetic."
-                class="absolute inset-0 h-full w-full object-cover object-center"
-              />
-            </div>
-            <div class="p-stack-md space-y-stack-sm flex-grow">
-              <h3 class="font-headline-sm text-headline-sm text-primary">
-                SparkMeet Season 5: Women Innovator Bootcamp 2026
-              </h3>
-              <p class="font-body-md text-body-md text-on-surface-variant">
-                Participating in this bootcamp was an empowering experience that
-                sharpened my ability to design digital products with a strategic
-                mindset. Collaborating with inspiring women innovators taught me
-                how to combine technology and targeted problem-solving,
-                equipping me with the confidence to pitch and lead impactful
-                digital ventures.
-              </p>
-            </div>
-            <div
-              class="p-stack-md bg-surface-container-low border-t border-primary/30"
-            >
-              <p class="font-label-md text-label-md text-primary">
-                REFLECTION:
-              </p>
-              <p
-                class="font-code-inline text-code-inline text-on-surface-variant italic"
-              >
-                This program beautifully bridged tech innovation with strategic
-                entrepreneurship. Mastering digital product design and pitching
-                under the guidance of industry mentors has greatly elevated my
-                leadership skills, transforming how I approach problem-solving
-                in the tech space.
-              </p>
-            </div>
-          </div>
-          <div
-            class="terminal-card terminal-border bg-surface-container-lowest flex flex-col"
-          >
-            <div class="relative aspect-[4/3] w-full">
-              <img
-                src="Public/US_relation.JPG"
-                alt="A high-contrast black and white photograph of a modern glass skyscraper reflecting a purple neon skyline, representing international finance and global connection in a minimalist techno-brutalist style."
-                class="absolute inset-0 h-full w-full object-contain object-center bg-black/10"
-              />
-            </div>
-            <div class="p-stack-md space-y-stack-sm flex-grow">
-              <h3 class="font-headline-sm text-headline-sm text-primary">
-                Ambassador’s Youth Forum: Voices of Tomorrow
-              </h3>
-              <p class="font-body-md text-body-md text-on-surface-variant">
-                Selected as a delegate for the prestigious Ambassador’s Youth
-                Forum, "Voices of Tomorrow," I engaged directly with diplomats
-                on U.S.–Cambodia relations. During the forum, I contributed to
-                high-level policy discussions focused on national branding and
-                leveraging local products for global competitiveness, while
-                strengthening my skills in youth advocacy and leadership.
-              </p>
-            </div>
-            <div
-              class="p-stack-md bg-surface-container-low border-t border-primary/30"
-            >
-              <p class="font-label-md text-label-md text-primary">
-                REFLECTION:
-              </p>
-              <p
-                class="font-code-inline text-code-inline text-on-surface-variant italic"
-              >
-                This forum offered a masterclass in diplomacy and economic
-                strategy. Exchanging ideas on U.S.–Cambodia relations and local
-                product leverage gave me a broader perspective on policy,
-                empowering me to more effectively champion impactful initiatives
-                in my community.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-      <section class="space-y-stack-lg">
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-          <div
-            class="terminal-card terminal-border bg-surface-container-lowest flex flex-col"
-          >
-            <div
-              class="w-full overflow-hidden terminal-divider grayscale hover:grayscale-0 transition-all duration-500 bg-black/20"
-            >
-              <div class="relative aspect-[4/3] w-full">
-                <img
-                  src="Public/cisco.jpg"
-                  alt="A high-contrast black and white photograph of a modern glass skyscraper reflecting a purple neon skyline, representing international finance and global connection in a minimalist techno-brutalist style."
-                  class="absolute inset-0 h-full w-full object-contain object-center bg-black/10"
-                />
-              </div>
-            </div>
-            <div class="p-stack-md space-y-stack-sm flex-grow">
-              <h3 class="font-headline-sm text-headline-sm text-primary">
-                Discovering Entrepreneurship - Cisco Networking Academy
-              </h3>
-              <p class="font-body-md text-body-md text-on-surface-variant">
-                As a student creator representing Cambodia, I completed
-                intensive online masterclasses and a one-week hybrid hackathon
-                at NTU Singapore focused on digital literacy and AI ethics,
-                while gaining global industry insights through corporate visits
-                to TikTok, SPH Media, and Mediacorp.
-              </p>
-            </div>
-            <div
-              class="p-stack-md bg-surface-container-low border-t border-primary/30"
-            >
-              <p class="font-label-md text-label-md text-primary">
-                REFLECTION:
-              </p>
-              <p
-                class="font-code-inline text-code-inline text-on-surface-variant italic"
-              >
-                This program deepened my understanding of AI ethics and media
-                literacy, while the hands-on hackathon and corporate visits
-                expanded my global perspective on responsible digital content
-                creation
-              </p>
-            </div>
-          </div>
-          <div
-            class="terminal-card terminal-border bg-surface-container-lowest flex flex-col"
-          >
-            <div class="space-y-2">
-              <div
-                class="relative aspect-[4/3] w-full overflow-hidden bg-black/20"
-              >
-                <img
-                  src="Public/i-SEA.JPG"
-                  alt="A high-contrast black and white photograph of a modern glass skyscraper reflecting a purple neon skyline, representing international finance and global connection in a minimalist techno-brutalist style."
-                  class="absolute inset-0 h-full w-full object-cover object-center"
-                />
-              </div>
-            </div>
-            <div class="p-stack-md space-y-stack-sm flex-grow">
-              <h3 class="font-headline-sm text-headline-sm text-primary">
-                i-SEA Fellowship Programme 2025 – Alumni
-              </h3>
-              <p class="font-body-md text-body-md text-on-surface-variant">
-                Represented Cambodia as a student content creator at NTU
-                Singapore, completing intensive training in AI ethics, deepfake
-                detection, and media law to build an ethical foundation for
-                digital storytelling and content creation.
-              </p>
-            </div>
-            <div
-              class="p-stack-md bg-surface-container-low border-t border-primary/30"
-            >
-              <p class="font-label-md text-label-md text-primary">
-                REFLECTION:
-              </p>
-              <p
-                class="font-code-inline text-code-inline text-on-surface-variant italic"
-              >
-                StHonored to represent Cambodia at NTU Singapore! As a student
-                creator, mastering AI ethics and media law is essential. An
-                incredible week of masterclasses, a regional hackathon, and tech
-                visits like TikTok—ready to bring these insights back to my
-                content!
-              </p>
-            </div>
-          </div>
-          <div
-            class="terminal-card terminal-border bg-surface-container-lowest flex flex-col"
-          >
-            <div
-              class="relative aspect-[4/3] w-full overflow-hidden bg-black/20"
-            >
-              <img
-                src="Public/IMG_5158.JPG"
-                alt="A graphic illustration of a network of interconnected purple lines over a pitch black map, representing a web of leaders and social impact initiatives across Southeast Asia in a minimal digital style."
-                class="absolute inset-0 h-full w-full object-cover object-center"
-              />
-            </div>
-            <div class="p-stack-md space-y-stack-sm flex-grow">
-              <h3 class="font-headline-sm text-headline-sm text-primary">
-                Sisters of Code: Web Development & UX/UI Design
-              </h3>
-              <p class="font-body-md text-body-md text-on-surface-variant">
-                I was lucky enough to receive a prestigious coding scholarship
-                dedicated to supporting women in tech. Through the program, I
-                got to dive into team projects using GitHub, which was amazing
-                for sharpening my version control and problem-solving skills
-                alongside some incredibly talented peers.
-              </p>
-            </div>
-            <div
-              class="p-stack-md bg-surface-container-low border-t border-primary/30"
-            >
-              <p class="font-label-md text-label-md text-primary">
-                REFLECTION:
-              </p>
-              <p
-                class="font-code-inline text-code-inline text-on-surface-variant italic"
-              >
-                Receiving this tech scholarship was such an incredible milestone
-                for me. Getting to collaborate on GitHub projects with a group
-                of talented women completely shifted how I view development. It
-                wasn't just about learning to code—it was about real teamwork,
-                solving problems under pressure, and building the confidence to
-                realize that I truly belong in this industry.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-      <section class="space-y-stack-lg">
-        <div
-          class="flex items-center gap-stack-md terminal-divider pb-stack-sm"
-        >
-          <span class="material-symbols-outlined text-primary">badge</span>
-          <h2 class="font-headline-md text-headline-md text-primary">
-            Certificates & Recognition
-          </h2>
-        </div>
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-container-max mx-auto">
-          <article class="terminal-card bg-surface-container-lowest overflow-hidden rounded-xl flex flex-col md:flex-row items-stretch">
-            <div class="md:w-1/2 w-full bg-black/10 flex items-center justify-center min-h-[420px] md:min-h-[520px]">
-              <img
-                src="Public/Etec.JPG"
-                alt="Certificate of completion from the Engineering of Technology and Electronic Center."
-                class="w-full h-full object-contain bg-transparent"
-              />
-            </div>
-            <div class="md:w-1/2 w-full p-5 md:p-6 flex flex-col justify-center gap-4">
-              <div>
-                <div class="flex items-start justify-between gap-4">
-                  <h3 class="font-headline-sm text-headline-sm text-primary leading-snug">
-                    Computer Training Courses — C / C++ / OOP & Algorithms
-                  </h3>
-                  <span class="material-symbols-outlined text-primary text-lg">badge</span>
-                </div>
-                <p class="font-body-md text-body-md text-on-surface-variant leading-relaxed mt-2">
-                  Successfully completed intensive academic and practical requirements covering Basic and Advanced
-                  C, C++, Object-Oriented Programming (OOP), and core algorithm design. Built a strong foundation
-                  in software architecture, data structures, and algorithmic problem-solving.
-                </p>
-              </div>
-            </div>
-          </article>
-
-          <article class="terminal-card bg-surface-container-lowest overflow-hidden rounded-xl flex flex-col md:flex-row items-stretch">
-            <div class="md:w-1/2 w-full bg-black/10 flex items-center justify-center min-h-[420px] md:min-h-[520px]">
-              <img
-                src="Public/Deloitte.JPG"
-                alt="Deloitte Work Readiness Station certificate."
-                class="w-full h-full object-contain bg-transparent"
-              />
-            </div>
-            <div class="md:w-1/2 w-full p-5 md:p-6 flex flex-col justify-center gap-4">
-              <div>
-                <div class="flex items-start justify-between gap-4">
-                  <h3 class="font-headline-sm text-headline-sm text-primary leading-snug">
-                    Deloitte Work Readiness Station 1–2
-                  </h3>
-                  <span class="material-symbols-outlined text-primary text-lg">verified</span>
-                </div>
-                <p class="font-body-md text-body-md text-on-surface-variant leading-relaxed mt-2">
-                  Completed the Deloitte Work Readiness Station program in collaboration with Sisters of Code,
-                  focusing on corporate professionalism, workplace technical skills, and practical readiness for
-                  the digital workforce.
-                </p>
-              </div>
-            </div>
-          </article>
-        </div>
-      </section>
-      <section class="space-y-stack-lg pb-stack-lg">
-        <div
-          class="flex items-center gap-stack-md terminal-divider pb-stack-sm"
-        >
-          <span class="material-symbols-outlined text-primary">school</span>
-          <h2 class="font-headline-md text-headline-md text-primary">
-            Honors & awards
-          </h2>
-        </div>
-        <div class="grid grid-cols-1 gap-6">
-          <div
-            class="terminal-card terminal-border bg-surface-container-lowest overflow-hidden"
-          >
-            <div class="flex flex-col md:flex-row h-full">
-              <div
-                class="md:w-2/5 w-full h-56 md:h-auto border-b md:border-b-0 md:border-r border-primary/40 overflow-hidden bg-black/20"
-              >
-                <img
-                  src="Public/guest_speaker.JPG"
-                  alt="Guest speaker at the Management Foundation Studies Grand Launch."
-                  class="h-full w-full object-contain object-center"
-                />
-              </div>
-              <div class="flex-1 p-stack-md space-y-stack-sm">
-                <div class="flex justify-between items-start gap-2">
-                  <h3 class="font-headline-sm text-headline-sm text-primary">
-                    Guest Speaker - Management Foundation Studies Grand Launch
-                  </h3>
-                  <span
-                    class="material-symbols-outlined text-primary shrink-0"
-                    data-weight="fill"
-                    >verified</span
-                  >
-                </div>
-                <p class="font-body-md text-body-md text-on-surface">
-                  Awarded a Certificate of Appreciation for serving as a guest
-                  speaker at the Management Foundation Studies Grand Launch held
-                  at Hyatt Regency Phnom Penh. Delivered an engaging
-                  presentation titled "From Passion to Profession: Future-ready
-                  Skills that Make YOU Stand Out," sharing insights on career
-                  readiness and essential skills for the digital age.
-                </p>
-              
-              </div>
-            </div>
-          </div>
-
-          <div
-            class="terminal-card terminal-border bg-surface-container-lowest overflow-hidden"
-          >
-            <div class="flex flex-col md:flex-row h-full">
-              <div
-                class="md:w-2/5 w-full h-56 md:h-auto border-b md:border-b-0 md:border-r border-primary/40 overflow-hidden bg-black/20"
-              >
-                <img
-                  src="Public/Aokas.JPG"
-                  alt="A visual highlight of the i-SEA fellowship experience."
-                  class="h-full w-full object-cover object-center"
-                />
-              </div>
-              <div class="flex-1 p-stack-md space-y-stack-sm">
-                <div class="flex justify-between items-start gap-2">
-                  <h3 class="font-headline-sm text-headline-sm text-primary">
-                    Media Ambassador - AOKAS Expo 2025
-                  </h3>
-                  <span
-                    class="material-symbols-outlined text-primary shrink-0"
-                    data-weight="fill"
-                    >verified</span
-                  >
-                </div>
-                <p class="font-body-md text-body-md text-on-surface">
-                  Awarded a Certificate of Appreciation in recognition of my
-                  role and support as the official Media Ambassador for the
-                  AOKAS Expo held on July 25-27, 2025, at Connexion, Phnom Penh.
-                  Leveraged digital communication and media strategy to promote
-                  the event, engage diverse audiences, and drive community
-                  impact.
-                </p>
-               
-                </div>
-              </div>
-            </div>
-
-            <div
-            class="terminal-card terminal-border bg-surface-container-lowest overflow-hidden"
-          >
-            <div class="flex flex-col md:flex-row h-full">
-              <div
-                class="md:w-2/5 w-full h-56 md:h-auto border-b md:border-b-0 md:border-r border-primary/40 overflow-hidden bg-black/20"
-              >
-                <img
-                  src="Public/Dream.JPG"
-                  alt="A visual highlight of the i-SEA fellowship experience."
-                  class="h-full w-full object-cover object-center"
-                />
-              </div>
-              <div class="flex-1 p-stack-md space-y-stack-sm">
-                <div class="flex justify-between items-start gap-2">
-                  <h3 class="font-headline-sm text-headline-sm text-primary">
+            <div class="flex-1 p-stack-md space-y-stack-sm">
+              <div class="flex justify-between items-start gap-2">
+                <h3 class="font-headline-sm text-headline-sm text-primary">
                   Media Ambassador - DREAM Cambodia Academia Challenge 2025
-                  </h3>
-                  <span
-                    class="material-symbols-outlined text-primary shrink-0"
-                    data-weight="fill"
-                    >verified</span
-                  >
-                </div>
-                <p class="font-body-md text-body-md text-on-surface">
-                 Awarded a Certificate of Appreciation for outstanding contributions and commitment as a Media Ambassador for the DREAM Cambodia Academia Challenge 2025. Recognized for the creative, consistent, and inspirational use of digital media platforms to amplify the program's vision, educational values, and community impact.
-                </p>
-               
-                </div>
+                </h3>
+                <span class="material-symbols-outlined text-primary shrink-0" data-weight="fill">verified</span>
               </div>
-            </div>
+              <p class="font-body-md text-body-md text-on-surface">
+                Awarded a Certificate of Appreciation for outstanding contributions and commitment as a Media Ambassador
+                for the DREAM Cambodia Academia Challenge 2025. Recognized for the creative, consistent, and
+                inspirational use of digital media platforms to amplify the program's vision, educational values, and
+                community impact.
+              </p>
 
-            <div
-            class="terminal-card terminal-border bg-surface-container-lowest overflow-hidden"
-          >
-            <div class="flex flex-col md:flex-row h-full">
-              <div
-                class="md:w-2/5 w-full h-56 md:h-auto border-b md:border-b-0 md:border-r border-primary/40 overflow-hidden bg-black/20"
-              >
-                <img
-                  src="Public/AHHA.PNG"
-                  alt="A visual highlight of the computer training experience."
-                  class="h-full w-full object-cover object-center"
-                />
-              </div>
-              <div class="flex-1 p-stack-md space-y-stack-sm">
-                <div class="flex justify-between items-start gap-2">
-                  <h3 class="font-headline-sm text-headline-sm text-primary">
-                   Certificate of Completion - Content Creation & Awareness Promotion
-                  </h3>
-                  <span
-                    class="material-symbols-outlined text-primary shrink-0"
-                    data-weight="fill"
-                    >verified</span
-                  >
-                </div>
-                <p class="font-body-md text-body-md text-on-surface">
-                 Recognized for successfully contributing to promoting AHHA Education Cambodia's mission
-                  through impactful content creation. Utilized digital communication strategies to enhance
-                 brand visibility and raise public awareness for educational initiatives.
-                </p>
-               
-                </div>
-              </div>
             </div>
-
-            <div
-            class="terminal-card terminal-border bg-surface-container-lowest overflow-hidden"
-          >
-            <div class="flex flex-col md:flex-row h-full">
-              <div
-                class="md:w-2/5 w-full h-56 md:h-auto border-b md:border-b-0 md:border-r border-primary/40 overflow-hidden bg-black/20"
-              >
-                <img
-                  src="Public/CIMO.JPG"
-                  alt="A visual highlight of the i-SEA fellowship experience."
-                  class="h-full w-full object-cover object-center"
-                />
-              </div>
-              <div class="flex-1 p-stack-md space-y-stack-sm">
-                <div class="flex justify-between items-start gap-2">
-                  <h3 class="font-headline-sm text-headline-sm text-primary">
-                    Ambassador - Cambodian Interscholastic Mathematical Olympiad (CIMO)
-                  </h3>
-                  <span
-                    class="material-symbols-outlined text-primary shrink-0"
-                    data-weight="fill"
-                    >verified</span
-                  >
-                </div>
-                <p class="font-body-md text-body-md text-on-surface">
-                Presented with a Certificate of Appreciation for strategic contributions
-                 and support as a CIMO Ambassador. Collaborated with the organization to champion their nationwide
-                 mission of promoting educational equity and empowering student participation in 
-                 competitive mathematics.
-                </p>
-               
-                </div>
-              </div>
-            </div>
-
-            <div
-            class="terminal-card terminal-border bg-surface-container-lowest overflow-hidden"
-          >
-            <div class="flex flex-col md:flex-row h-full">
-              <div
-                class="md:w-2/5 w-full h-56 md:h-auto border-b md:border-b-0 md:border-r border-primary/40 overflow-hidden bg-black/20"
-              >
-                <img
-                  src="Public/grade A.JPG"
-                  alt="A visual highlight of the i-SEA fellowship experience."
-                  class="h-full w-full object-cover object-center"
-                />
-              </div>
-              <div class="flex-1 p-stack-md space-y-stack-sm">
-                <div class="flex justify-between items-start gap-2">
-                  <h3 class="font-headline-sm text-headline-sm text-primary">
-                    National High School Exam (Bac II) - Grade A Commendation
-                  </h3>
-                  <span
-                    class="material-symbols-outlined text-primary shrink-0"
-                    data-weight="fill"
-                    >verified</span
-                  >
-                </div>
-                <p class="font-body-md text-body-md text-on-surface">
-                 Awarded a formal Certificate of Commendation by the Board of Directors at BELTEI International School for achieving an outstanding Grade 'A' on the national high school graduation examination for the academic school year 2021-2022. 
-                </p>
-               
-                </div>
-              </div>
-            </div>
-
-               <div
-            class="terminal-card terminal-border bg-surface-container-lowest overflow-hidden"
-          >
-            <div class="flex flex-col md:flex-row h-full">
-              <div
-                class="md:w-2/5 w-full h-56 md:h-auto border-b md:border-b-0 md:border-r border-primary/40 overflow-hidden bg-black/20"
-              >
-                <img
-                  src="Public/Grade12.JPG"
-                  alt="A visual highlight of the i-SEA fellowship experience."
-                  class="h-full w-full object-cover object-center"
-                />
-              </div>
-              <div class="flex-1 p-stack-md space-y-stack-sm">
-                <div class="flex justify-between items-start gap-2">
-                  <h3 class="font-headline-sm text-headline-sm text-primary">
-                   Merit Award - Mathematics Outstanding Students Cambodia (Grade 12 Division)
-                  </h3>
-                  <span
-                    class="material-symbols-outlined text-primary shrink-0"
-                    data-weight="fill"
-                    >verified</span
-                  >
-                </div>
-                <p class="font-body-md text-body-md text-on-surface">
-               Received national recognition for outstanding achievement and excellent performance in the Mathematics 
-               Outstanding Students Cambodia 2022 competition (Grade 12 Division)
-                </p>
-               
-                </div>
-              </div>
-            </div>
-
-               <div
-            class="terminal-card terminal-border bg-surface-container-lowest overflow-hidden"
-          >
-            <div class="flex flex-col md:flex-row h-full">
-              <div
-                class="md:w-2/5 w-full h-56 md:h-auto border-b md:border-b-0 md:border-r border-primary/40 overflow-hidden bg-black/20"
-              >
-                <img
-                  src="Public/grade11.JPG"
-                  alt="A visual highlight of the i-SEA fellowship experience."
-                  class="h-full w-full object-cover object-center"
-                />
-              </div>
-              <div class="flex-1 p-stack-md space-y-stack-sm">
-                <div class="flex justify-between items-start gap-2">
-                  <h3 class="font-headline-sm text-headline-sm text-primary">
-                   Merit Award - Mathematics Outstanding Students Cambodia (Grade 11 Division)
-                  </h3>
-                  <span
-                    class="material-symbols-outlined text-primary shrink-0"
-                    data-weight="fill"
-                    >verified</span
-                  >
-                </div>
-                <p class="font-body-md text-body-md text-on-surface">
-               Awarded for outstanding academic achievement and top-tier performance in the Mathematics Outstanding Students Cambodia 2021 nationwide competition (Grade 11 Division)
-                </p>
-               
-                </div>
-              </div>
-            </div>
-
           </div>
         </div>
-      </section>
-    </main>
-    <footer
-      class="bg-background dark:bg-background text-primary font-label-md text-label-md w-full bottom-0 border-t border-primary mt-section-gap"
-    >
-      <div
-        class="flex flex-col md:flex-row justify-between items-center px-margin-mobile md:px-margin-desktop py-stack-lg w-full max-w-container-max mx-auto gap-stack-md"
-      >
-        <div class="font-headline-sm text-headline-sm text-primary uppercase">
-          © 2026 HEANG SONITA
+
+        <div class="terminal-card terminal-border bg-surface-container-lowest overflow-hidden">
+          <div class="flex flex-col md:flex-row h-full">
+            <div
+              class="md:w-2/5 w-full h-56 md:h-auto border-b md:border-b-0 md:border-r border-primary/40 overflow-hidden bg-black/20">
+              <img src="Public/AHHA.PNG" alt="Certificate of Completion for Content Creation & Awareness Promotion from AHHA Education Cambodia."
+                class="h-full w-full object-contain object-center" />
+            </div>
+            <div class="flex-1 p-stack-md space-y-stack-sm">
+              <div class="flex justify-between items-start gap-2">
+                <h3 class="font-headline-sm text-headline-sm text-primary">
+                  Certificate of Completion - Content Creation & Awareness Promotion
+                </h3>
+                <span class="material-symbols-outlined text-primary shrink-0" data-weight="fill">verified</span>
+              </div>
+              <p class="font-body-md text-body-md text-on-surface">
+                Recognized for successfully contributing to promoting AHHA Education Cambodia's mission
+                through impactful content creation. Utilized digital communication strategies to enhance
+                brand visibility and raise public awareness for educational initiatives.
+              </p>
+
+            </div>
+          </div>
         </div>
-        <div class="flex items-center gap-stack-lg">
-          <a
-            class="text-on-surface-variant hover:text-primary hover:underline transition-all"
-            href="https://linkedin.com"
-            target="_blank"
-            rel="noreferrer"
-            >LinkedIn</a
-          >
-          <a
-            class="text-on-surface-variant hover:text-primary hover:underline transition-all"
-            href="mailto:hello@example.com"
-            >Email</a
-          >
-          <a
-            class="text-on-surface-variant hover:text-primary hover:underline transition-all"
-            href="https://github.com"
-            target="_blank"
-            rel="noreferrer"
-            >GitHub</a
-          >
-          <a
-            class="text-on-surface-variant hover:text-primary hover:underline transition-all"
-            href="https://twitter.com"
-            target="_blank"
-            rel="noreferrer"
-            >Twitter</a
-          >
+
+        <div class="terminal-card terminal-border bg-surface-container-lowest overflow-hidden">
+          <div class="flex flex-col md:flex-row h-full">
+            <div
+              class="md:w-2/5 w-full h-56 md:h-auto border-b md:border-b-0 md:border-r border-primary/40 overflow-hidden bg-black/20">
+              <img src="Public/CIMO.JPG" alt="Certificate of Appreciation for strategic contributions as a CIMO Ambassador."
+                class="h-full w-full object-contain object-center" />
+            </div>
+            <div class="flex-1 p-stack-md space-y-stack-sm">
+              <div class="flex justify-between items-start gap-2">
+                <h3 class="font-headline-sm text-headline-sm text-primary">
+                  Ambassador - Cambodian Interscholastic Mathematical Olympiad (CIMO)
+                </h3>
+                <span class="material-symbols-outlined text-primary shrink-0" data-weight="fill">verified</span>
+              </div>
+              <p class="font-body-md text-body-md text-on-surface">
+                Presented with a Certificate of Appreciation for strategic contributions
+                and support as a CIMO Ambassador. Collaborated with the organization to champion their nationwide
+                mission of promoting educational equity and empowering student participation in
+                competitive mathematics.
+              </p>
+
+            </div>
+          </div>
         </div>
-        <div
-          class="text-primary/50 text-[10px] tracking-widest font-code-inline"
-        >
-          BUILT_FOR_PERFORMANCE // ROOT_ACCESS_GRANTED
+
+        <div class="terminal-card terminal-border bg-surface-container-lowest overflow-hidden">
+          <div class="flex flex-col md:flex-row h-full">
+            <div
+              class="md:w-2/5 w-full h-56 md:h-auto border-b md:border-b-0 md:border-r border-primary/40 overflow-hidden bg-black/20">
+              <img src="Public/grade A.JPG" alt="National High School Exam (Bac II) Grade A Certificate of Commendation from BELTEI International School."
+                class="h-full w-full object-contain object-center" />
+            </div>
+            <div class="flex-1 p-stack-md space-y-stack-sm">
+              <div class="flex justify-between items-start gap-2">
+                <h3 class="font-headline-sm text-headline-sm text-primary">
+                  National High School Exam (Bac II) - Grade A Commendation
+                </h3>
+                <span class="material-symbols-outlined text-primary shrink-0" data-weight="fill">verified</span>
+              </div>
+              <p class="font-body-md text-body-md text-on-surface">
+                Awarded a formal Certificate of Commendation by the Board of Directors at BELTEI International School
+                for achieving an outstanding Grade 'A' on the national high school graduation examination for the
+                academic school year 2021-2022.
+              </p>
+
+            </div>
+          </div>
         </div>
+
+        <div class="terminal-card terminal-border bg-surface-container-lowest overflow-hidden">
+          <div class="flex flex-col md:flex-row h-full">
+            <div
+              class="md:w-2/5 w-full h-56 md:h-auto border-b md:border-b-0 md:border-r border-primary/40 overflow-hidden bg-black/20">
+              <img src="Public/Grade12.JPG" alt="Merit Award certificate for Mathematics Outstanding Students Cambodia 2022 (Grade 12 Division)."
+                class="h-full w-full object-contain object-center" />
+            </div>
+            <div class="flex-1 p-stack-md space-y-stack-sm">
+              <div class="flex justify-between items-start gap-2">
+                <h3 class="font-headline-sm text-headline-sm text-primary">
+                  Merit Award - Mathematics Outstanding Students Cambodia (Grade 12 Division)
+                </h3>
+                <span class="material-symbols-outlined text-primary shrink-0" data-weight="fill">verified</span>
+              </div>
+              <p class="font-body-md text-body-md text-on-surface">
+                Received national recognition for outstanding achievement and excellent performance in the Mathematics
+                Outstanding Students Cambodia 2022 competition (Grade 12 Division)
+              </p>
+
+            </div>
+          </div>
+        </div>
+
+        <div class="terminal-card terminal-border bg-surface-container-lowest overflow-hidden">
+          <div class="flex flex-col md:flex-row h-full">
+            <div
+              class="md:w-2/5 w-full h-56 md:h-auto border-b md:border-b-0 md:border-r border-primary/40 overflow-hidden bg-black/20">
+              <img src="Public/grade11.JPG" alt="Merit Award certificate for Mathematics Outstanding Students Cambodia 2021 (Grade 11 Division)."
+                class="h-full w-full object-contain object-center" />
+            </div>
+            <div class="flex-1 p-stack-md space-y-stack-sm">
+              <div class="flex justify-between items-start gap-2">
+                <h3 class="font-headline-sm text-headline-sm text-primary">
+                  Merit Award - Mathematics Outstanding Students Cambodia (Grade 11 Division)
+                </h3>
+                <span class="material-symbols-outlined text-primary shrink-0" data-weight="fill">verified</span>
+              </div>
+              <p class="font-body-md text-body-md text-on-surface">
+                Awarded for outstanding academic achievement and top-tier performance in the Mathematics Outstanding
+                Students Cambodia 2021 nationwide competition (Grade 11 Division)
+              </p>
+
+            </div>
+          </div>
+        </div>
+
       </div>
-    </footer>
-    <script src="assets/js/script.js" defer></script>
-    <script>
-      document.querySelectorAll(".terminal-card").forEach((card) => {
-        card.addEventListener("click", () => {
-          const title =
-            card.querySelector("h3, span.font-label-md")?.innerText ||
-            "Unknown Module";
-          console.log(
-            `%c[SYSTEM]: Initializing ${title} exploration sequence...`,
-            "color: #8A2BE2; font-weight: bold;",
-          );
-        });
+      </div>
+    </section>
+  </main>
+  <!-- Footer -->
+  <footer class="w-full bottom-0 bg-black border-t border-[#dcb8ff]/30 mt-16">
+    <div
+      class="flex flex-col md:flex-row justify-between items-center px-4 md:px-8 py-8 w-full max-w-[1200px] mx-auto gap-4">
+      <div class="flex flex-col md:flex-row items-center gap-2 md:gap-4">
+        <span class="font-bold text-xl text-[#dcb8ff] uppercase tracking-wider">HEANG.SONITA</span>
+        <span class="text-[#dcb8ff]/30 hidden md:inline">|</span>
+        <span class="text-sm text-zinc-400">© 2026 HEANG SONITA</span>
+      </div>
+      <div class="flex gap-6">
+        <a class="text-sm text-zinc-400 hover:text-[#dcb8ff] hover:underline transition-all active:scale-95"
+          href="https://www.linkedin.com/in/heang-sonita-089607300?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app"
+          target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        <a class="text-sm text-zinc-400 hover:text-[#dcb8ff] hover:underline transition-all active:scale-95"
+          href="mailto:sonitaheangpretty@gmail.com">Email</a>
+        <a class="text-sm text-zinc-400 hover:text-[#dcb8ff] hover:underline transition-all active:scale-95"
+          href="https://github.com/Sonita-Dev" target="_blank" rel="noopener noreferrer">GitHub</a>
+      </div>
+    </div>
+  </footer>
+  <script src="assets/js/script.js" defer></script>
+  <script>
+    document.querySelectorAll(".terminal-card").forEach((card) => {
+      card.addEventListener("click", () => {
+        const title =
+          card.querySelector("h3, span.font-label-md")?.innerText ||
+          "Unknown Module";
+        console.log(
+          `%c[SYSTEM]: Initializing ${title} exploration sequence...`,
+          "color: #8A2BE2; font-weight: bold;",
+        );
       });
-    </script>
-  </body>
+    });
+  </script>
+</body>
+
 </html>
