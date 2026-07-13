@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "dev": "npx http-server -p 8000",
+    "dev": "npx http-server . -p 8000",
     "start": "npm run dev",
     "screenshot": "node scripts/screenshot.js",
     "serve-api": "node server.js"
